@@ -15,6 +15,10 @@
 		322BA0C72629BC100050ED4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 322BA0C52629BC100050ED4B /* LaunchScreen.storyboard */; };
 		322BA0D22629BC100050ED4B /* CheatManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0D12629BC100050ED4B /* CheatManagerTests.swift */; };
 		322BA0DD2629BC100050ED4B /* CheatManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0DC2629BC100050ED4B /* CheatManagerUITests.swift */; };
+		322BA0EE2629BC440050ED4B /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0ED2629BC440050ED4B /* TabView.swift */; };
+		32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EDE2629BD9000C73004 /* HomeView.swift */; };
+		32B40EF12629C1FE00C73004 /* Defintions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EF02629C1FD00C73004 /* Defintions.swift */; };
+		32B40EF92629C44E00C73004 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EF82629C44E00C73004 /* NetworkHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,11 @@
 		322BA0D82629BC100050ED4B /* CheatManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheatManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		322BA0DC2629BC100050ED4B /* CheatManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatManagerUITests.swift; sourceTree = "<group>"; };
 		322BA0DE2629BC100050ED4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		322BA0ED2629BC440050ED4B /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		322BA0F62629BCBF0050ED4B /* CheatManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CheatManager.entitlements; sourceTree = "<group>"; };
+		32B40EDE2629BD9000C73004 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		32B40EF02629C1FD00C73004 /* Defintions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defintions.swift; sourceTree = "<group>"; };
+		32B40EF82629C44E00C73004 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +108,12 @@
 		322BA0B92629BC0C0050ED4B /* CheatManager */ = {
 			isa = PBXGroup;
 			children = (
+				322BA0F22629BC7D0050ED4B /* UI */,
+				32B40EEF2629C1DB00C73004 /* Backend */,
+				322BA0C02629BC100050ED4B /* Assets.xcassets */,
+				322BA0F62629BCBF0050ED4B /* CheatManager.entitlements */,
 				322BA0BA2629BC0C0050ED4B /* AppDelegate.swift */,
 				322BA0BC2629BC0C0050ED4B /* SceneDelegate.swift */,
-				322BA0BE2629BC0C0050ED4B /* ContentView.swift */,
-				322BA0C02629BC100050ED4B /* Assets.xcassets */,
 				322BA0C52629BC100050ED4B /* LaunchScreen.storyboard */,
 				322BA0C82629BC100050ED4B /* Info.plist */,
 				322BA0C22629BC100050ED4B /* Preview Content */,
@@ -134,6 +145,25 @@
 				322BA0DE2629BC100050ED4B /* Info.plist */,
 			);
 			path = CheatManagerUITests;
+			sourceTree = "<group>";
+		};
+		322BA0F22629BC7D0050ED4B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				322BA0BE2629BC0C0050ED4B /* ContentView.swift */,
+				322BA0ED2629BC440050ED4B /* TabView.swift */,
+				32B40EDE2629BD9000C73004 /* HomeView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		32B40EEF2629C1DB00C73004 /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				32B40EF02629C1FD00C73004 /* Defintions.swift */,
+				32B40EF82629C44E00C73004 /* NetworkHandler.swift */,
+			);
+			path = Backend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B40EF92629C44E00C73004 /* NetworkHandler.swift in Sources */,
+				322BA0EE2629BC440050ED4B /* TabView.swift in Sources */,
 				322BA0BB2629BC0C0050ED4B /* AppDelegate.swift in Sources */,
 				322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */,
+				32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */,
+				32B40EF12629C1FE00C73004 /* Defintions.swift in Sources */,
 				322BA0BF2629BC0C0050ED4B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CheatManager/CheatManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
 				DEVELOPMENT_TEAM = UUGF4RZ8S8;
@@ -447,6 +482,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manticoreteam.CheatManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -457,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CheatManager/CheatManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
 				DEVELOPMENT_TEAM = UUGF4RZ8S8;
@@ -468,6 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.manticoreteam.CheatManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
