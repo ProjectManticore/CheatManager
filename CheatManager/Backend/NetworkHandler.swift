@@ -20,10 +20,8 @@ public class requests {
     }
 }
 
-#warning("todo: strip this more")
-
 public class NetworkHandling {
-    func jsonRequest(url: String, token: String, Cookie: String, json: Bool, type: requests.requestTypes, bodyObject: [String:Any]) -> [[String:Any]] {
+	func jsonRequest(url: String, token: String = "", cookie: String = "", type: requests.requestTypes, bodyObject: [String:Any] = [:]) -> [[String:Any]] {
         var completion: Bool = false
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
@@ -41,8 +39,8 @@ public class NetworkHandling {
         case .PUT:
             request.httpMethod = "PUT"
         }
-        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.addValue(Cookie, forHTTPHeaderField: "Cookie")
+		if (token != "") { request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization") }
+		if (cookie != "") { request.addValue(cookie, forHTTPHeaderField: "Cookie") }
         if type == .POST {
             request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
@@ -84,7 +82,7 @@ public class NetworkHandling {
                         print("error at serializing: \(error.localizedDescription)")
                     }
                     completion = true
-                    print("returned properly \(Date())")
+                    print("returned properly \(Date()) \(returnArray)")
                     return returnArray
                 }
             }
@@ -95,6 +93,7 @@ public class NetworkHandling {
             return returnArray
         }
     }
+	
     func dataRequest(url: String, json: Bool, bodyObject: [String:Any]) -> Data {
         var completion: Bool = false
         let sessionConfig = URLSessionConfiguration.default
