@@ -19,6 +19,7 @@
 		32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EDE2629BD9000C73004 /* HomeView.swift */; };
 		32B40EF12629C1FE00C73004 /* Defintions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EF02629C1FD00C73004 /* Defintions.swift */; };
 		32B40EF92629C44E00C73004 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EF82629C44E00C73004 /* NetworkHandler.swift */; };
+		32B40F04262A668700C73004 /* ModDepiction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40F03262A668700C73004 /* ModDepiction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		32B40EDE2629BD9000C73004 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		32B40EF02629C1FD00C73004 /* Defintions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defintions.swift; sourceTree = "<group>"; };
 		32B40EF82629C44E00C73004 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		32B40F03262A668700C73004 /* ModDepiction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModDepiction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				322BA0BE2629BC0C0050ED4B /* ContentView.swift */,
 				322BA0ED2629BC440050ED4B /* TabView.swift */,
 				32B40EDE2629BD9000C73004 /* HomeView.swift */,
+				32B40F03262A668700C73004 /* ModDepiction.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				322BA0EE2629BC440050ED4B /* TabView.swift in Sources */,
 				322BA0BB2629BC0C0050ED4B /* AppDelegate.swift in Sources */,
 				322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */,
+				32B40F04262A668700C73004 /* ModDepiction.swift in Sources */,
 				32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */,
 				32B40EF12629C1FE00C73004 /* Defintions.swift in Sources */,
 				322BA0BF2629BC0C0050ED4B /* ContentView.swift in Sources */,
@@ -476,6 +480,7 @@
 				DEVELOPMENT_TEAM = UUGF4RZ8S8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CheatManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,6 +504,7 @@
 				DEVELOPMENT_TEAM = UUGF4RZ8S8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CheatManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

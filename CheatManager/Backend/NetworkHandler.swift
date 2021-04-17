@@ -1,6 +1,6 @@
 //
 //  NetworkHandler.swift
-//  Helselia
+//  CheatManager
 //
 //  Created by evelyn on 2021-02-27.
 //
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-let debug = true
+let debug = false
 
 public class requests {
     enum requestTypes {
@@ -20,15 +20,19 @@ public class requests {
     }
 }
 
-#warning("todo: strip this more")
+#warning("todo: strip this more 😳")
+
+// example
+// jsonRequest(url: <url as string of json>, json: <use bodyObject or not>, type <GET, POST, PATCH or PUT>, bodyObject: <Array for POST request>)
 
 public class NetworkHandling {
-    func jsonRequest(url: String, token: String, Cookie: String, json: Bool, type: requests.requestTypes, bodyObject: [String:Any]) -> [[String:Any]] {
+    func jsonRequest(url: String, json: Bool, type: requests.requestTypes, bodyObject: [String:Any]) -> [[String:Any]] {
         var completion: Bool = false
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         var request = URLRequest(url: (URL(string: url) ?? URL(string: "#"))!)
         var retData: Data = Data()
+        var offline: Bool = false
         switch type {
         case .GET:
             request.httpMethod = "GET"
@@ -41,8 +45,6 @@ public class NetworkHandling {
         case .PUT:
             request.httpMethod = "PUT"
         }
-        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.addValue(Cookie, forHTTPHeaderField: "Cookie")
         if type == .POST {
             request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
@@ -54,12 +56,13 @@ public class NetworkHandling {
                 print("success \(Date())")
                 let statusCode = (response as! HTTPURLResponse).statusCode
                 retData = Data(data!)
-                if data != Data() {
+                if let data = data {
                     do {
-                        returnArray = try JSONSerialization.jsonObject(with: data ?? Data(), options: .mutableContainers) as? [[String:Any]] ?? [[String:Any]]()
+                        returnArray = try JSONSerialization.jsonObject(with: data , options: .mutableContainers) as? [[String:Any]] ?? [[String:Any]]()
                     } catch {
                         print("error at serializing: \(error.localizedDescription)")
                     }
+                    print(data)
                 } else {
                     returnArray = [["Code":statusCode]]
                 }
@@ -68,10 +71,14 @@ public class NetworkHandling {
                 }
             }
             else {
-                print("URL Session Task Failed: %@", error!.localizedDescription);
+                if debug == true {
+                    print("URL Session Task Failed: %@", error!.localizedDescription);
+                }
+                print("we're offline. stopping here the asynchronation action")
+                offline = true
             }
         })
-        if type == .GET {
+        if type == .GET && offline == false {
             print("starting \(Date())")
             while completion == false {
                 task.resume()
@@ -101,6 +108,7 @@ public class NetworkHandling {
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         var request = URLRequest(url: (URL(string: url) ?? URL(string: "#"))!)
         var retData: Data = Data()
+        var offline: Bool = false
         request.httpMethod = "GET"
         let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             if (error == nil) {
@@ -113,7 +121,11 @@ public class NetworkHandling {
                 }
             }
             else {
-                print("URL Session Task Failed: %@", error!.localizedDescription);
+                if debug == true {
+                    print("URL Session Task Failed: %@", error!.localizedDescription);
+                }
+                offline = true
+                print("we're offline. stopping here the asynchronation action")
             }
         })
         // garbage completion handling, very sorry
@@ -127,6 +139,9 @@ public class NetworkHandling {
                 sleep(1)
                 task.resume()
                 session.finishTasksAndInvalidate()
+                if offline == true {
+                    return retData
+                }
             }
         }
     }

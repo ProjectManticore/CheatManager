@@ -16,6 +16,12 @@ struct TabView: View {
                 NavigationLink(destination: HomeView(), tag: 0, selection: self.$id) {
                     Label("Home", systemImage: "house.fill")
                 }
+                NavigationLink(destination: HomeView(), tag: 0, selection: self.$id) {
+                    Label("Packages", systemImage: "shippingbox.fill")
+                }
+            }
+            .onAppear {
+                self.id = 0
             }
             .listStyle(SidebarListStyle())
             .navigationBarTitle(Text("CheatManager"))

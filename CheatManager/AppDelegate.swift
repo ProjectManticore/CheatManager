@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  CheatManager
 //
-//  Created by charles on 2021-04-16.
+//  Created by evelyn on 2021-04-16.
 //
 
 import UIKit

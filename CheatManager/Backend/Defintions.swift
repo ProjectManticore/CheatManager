@@ -21,5 +21,24 @@ public struct FeaturedPage {
 }
 
 public struct Mod {
-    
+    var icon: String
+    var name: String
+    var id: String
+    var gameBundleID: String
+    var gameName: String
+    var maintainer: String
+    enum type {
+        case singular
+        case multi
+        case undefined
+    }
+    enum level {
+        case simple
+        case advanced
+        case lowlevel
+    }
+    enum origin { // backport flex 3 patches?
+        case native
+        case flex3
+    }
 }
