@@ -20,8 +20,6 @@ public class requests {
     }
 }
 
-#warning("todo: strip this more 😳")
-
 // example
 // jsonRequest(url: <url as string of json>, json: <use bodyObject or not>, type <GET, POST, PATCH or PUT>, bodyObject: <Array for POST request>)
 
@@ -45,8 +43,6 @@ public class NetworkHandling {
         case .PUT:
             request.httpMethod = "PUT"
         }
-		if (token != "") { request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization") }
-		if (cookie != "") { request.addValue(cookie, forHTTPHeaderField: "Cookie") }
         if type == .POST {
             request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
