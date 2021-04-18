@@ -22,15 +22,13 @@ struct HomeView: View {
                                 .frame(width: 300, height: 200)
                                 .padding()
                         }
-                    }
-                    .onAppear {
+                    }.onAppear {
                         DispatchQueue.main.async {
                             image = UIImage(data: net.dataRequest(url: "https://github.com/marijuanARM/featuredpage/raw/gh-pages/banners/co.shuga.Shuga-Sticker-Pack.jpg", json: false, bodyObject: [:])) ?? UIImage()
                         }
                     }
                 }
-            }
-            .navigationTitle(Text("Spotlight"))
+            }.navigationTitle(Text("Spotlight"))
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
