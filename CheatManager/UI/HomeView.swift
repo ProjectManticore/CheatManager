@@ -12,7 +12,17 @@ let net = NetworkHandling()
 
 struct HomeView: View {
 	@State var image: UIImage = UIImage(named: "Stickerpack")!
-	let featuredCheats = [StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "http://foo.bar", gameBanner: "http://foo.bar", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"), StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "http://foo.bar", gameBanner: "http://foo.bar", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3")]
+    
+    // TODO: Handle this via JSON parsing from API without freezing the UI
+	let featuredCheats = [
+        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "SubwaySurfersIcon", gameBanner: "http://foo.bar", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
+        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "SubwaySurfersIcon", gameBanner: "http://foo.bar", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3")
+    ]
+    
+    let arcadeCheats = [
+        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "SubwaySurfersIcon", gameBanner: "http://foo.bar", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
+        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "SubwaySurfersIcon", gameBanner: "http://foo.bar", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3")
+    ]
 	
     var body: some View {
         NavigationView {
@@ -28,9 +38,29 @@ struct HomeView: View {
                         }
                     }
                 }
+                
+                VStack(alignment: .leading) {
+                    Text("Arcade Games")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .multilineTextAlignment(.leading)
+                    HStack() {
+                            ForEach(arcadeCheats) { cheat in
+                                MarketRowView(storeCheat: cheat)
+                                    .padding(.leading)
+                            }
+                        }
+                }.padding(.leading, 5)
             }
-			.navigationTitle(Text("Spotlight"))
+			.navigationTitle(Text("Market"))
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+}
+
+
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
     }
 }
