@@ -11,24 +11,25 @@ import UIKit
 let net = NetworkHandling()
 
 struct HomeView: View {
-    @State var image: UIImage = UIImage()
+	@State var image: UIImage = UIImage(named: "Stickerpack")!
+	let featuredCheats = [StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "http://foo.bar", gameBanner: "http://foo.bar", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"), StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "http://foo.bar", gameBanner: "http://foo.bar", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3")]
+	
     var body: some View {
         NavigationView {
             List {
                 VStack {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-							FeaturedCard(image: $image, mod: FeaturedPage.CardPackage(imglink: "https://github.com/marijuanARM/featuredpage/raw/gh-pages/banners/co.shuga.Shuga-Sticker-Pack.jpg", title: "Mod", mod: Mod(icon: "", name: "Some Mod", id: "evelyn.genericMod", gameBundleID: "com.mojang.minecraft", gameName: "Minecraft", maintainer: "evelyn")).mod)
-                                .frame(width: 300, height: 200)
-                                .padding()
-                        }
-                    }.onAppear {
-                        DispatchQueue.main.async {
-                            image = UIImage(data: net.dataRequest(url: "https://github.com/marijuanARM/featuredpage/raw/gh-pages/banners/co.shuga.Shuga-Sticker-Pack.jpg", json: false, bodyObject: [:])) ?? UIImage()
+							ForEach(featuredCheats) { featuredCheat in
+								FeaturedCardView(image: $image, mod: FeaturedPage.CardPackage(imglink: featuredCheat.gameBanner, title: featuredCheat.gameName, mod: Mod(icon: "", name: featuredCheat.gameName, id: featuredCheat.id, gameBundleID: featuredCheat.gameBundleID, gameName: featuredCheat.gameName, maintainer: featuredCheat.author)).mod)
+									.frame(width: 300, height: 200)
+									.padding()
+							}
                         }
                     }
                 }
-            }.navigationTitle(Text("Spotlight"))
+            }
+			.navigationTitle(Text("Spotlight"))
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

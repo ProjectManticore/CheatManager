@@ -21,9 +21,9 @@
 		32B40EF92629C44E00C73004 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EF82629C44E00C73004 /* NetworkHandler.swift */; };
 		32B40F04262A668700C73004 /* ModDepiction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40F03262A668700C73004 /* ModDepiction.swift */; };
 		811EA043262C41B100035A17 /* NetworkEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EA042262C41B100035A17 /* NetworkEndpoints.swift */; };
-		833B0B44262C8A53009F91AE /* FeaturedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B0B43262C8A53009F91AE /* FeaturedCard.swift */; };
-		83724201262CC24F0028A867 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83724200262CC24F0028A867 /* LibraryView.swift */; };
-		83724206262CC2FB0028A867 /* CreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83724205262CC2FB0028A867 /* CreationView.swift */; };
+		81E1FC28262DFAD400467ECC /* PackagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1FC27262DFAD400467ECC /* PackagesView.swift */; };
+		81E1FC34262DFD0600467ECC /* StoreCheat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1FC33262DFD0600467ECC /* StoreCheat.swift */; };
+		833B0B44262C8A53009F91AE /* FeaturedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B0B43262C8A53009F91AE /* FeaturedCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +65,9 @@
 		32B40EF82629C44E00C73004 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		32B40F03262A668700C73004 /* ModDepiction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModDepiction.swift; sourceTree = "<group>"; };
 		811EA042262C41B100035A17 /* NetworkEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoints.swift; sourceTree = "<group>"; };
-		833B0B43262C8A53009F91AE /* FeaturedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCard.swift; sourceTree = "<group>"; };
-		83724200262CC24F0028A867 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
-		83724205262CC2FB0028A867 /* CreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationView.swift; sourceTree = "<group>"; };
+		81E1FC27262DFAD400467ECC /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
+		81E1FC33262DFD0600467ECC /* StoreCheat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCheat.swift; sourceTree = "<group>"; };
+		833B0B43262C8A53009F91AE /* FeaturedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +118,7 @@
 		322BA0B92629BC0C0050ED4B /* CheatManager */ = {
 			isa = PBXGroup;
 			children = (
+				81E1FC32262DFCEB00467ECC /* Models */,
 				322BA0F22629BC7D0050ED4B /* UI */,
 				32B40EEF2629C1DB00C73004 /* Backend */,
 				322BA0C02629BC100050ED4B /* Assets.xcassets */,
@@ -160,13 +161,12 @@
 		322BA0F22629BC7D0050ED4B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				81E1FC26262DFAC000467ECC /* Views */,
+				833B0B42262C8A46009F91AE /* Elements */,
 				322BA0BE2629BC0C0050ED4B /* ContentView.swift */,
 				322BA0ED2629BC440050ED4B /* TabView.swift */,
-				83724205262CC2FB0028A867 /* CreationView.swift */,
-				83724200262CC24F0028A867 /* LibraryView.swift */,
 				32B40EDE2629BD9000C73004 /* HomeView.swift */,
-				833B0B42262C8A46009F91AE /* Elements */,
-				32B40F03262A668700C73004 /* ModDepiction.swift */,
+				81E1FC27262DFAD400467ECC /* PackagesView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -181,10 +181,26 @@
 			path = Backend;
 			sourceTree = "<group>";
 		};
+		81E1FC26262DFAC000467ECC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32B40F03262A668700C73004 /* ModDepiction.swift */,
+				833B0B43262C8A53009F91AE /* FeaturedCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		81E1FC32262DFCEB00467ECC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81E1FC33262DFD0600467ECC /* StoreCheat.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		833B0B42262C8A46009F91AE /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				833B0B43262C8A53009F91AE /* FeaturedCard.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -320,15 +336,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				32B40EF92629C44E00C73004 /* NetworkHandler.swift in Sources */,
-				833B0B44262C8A53009F91AE /* FeaturedCard.swift in Sources */,
+				833B0B44262C8A53009F91AE /* FeaturedCardView.swift in Sources */,
 				322BA0EE2629BC440050ED4B /* TabView.swift in Sources */,
+				81E1FC28262DFAD400467ECC /* PackagesView.swift in Sources */,
 				322BA0BB2629BC0C0050ED4B /* AppDelegate.swift in Sources */,
 				322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */,
-				83724206262CC2FB0028A867 /* CreationView.swift in Sources */,
 				32B40F04262A668700C73004 /* ModDepiction.swift in Sources */,
 				32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */,
-				83724201262CC24F0028A867 /* LibraryView.swift in Sources */,
 				32B40EF12629C1FE00C73004 /* Defintions.swift in Sources */,
+				81E1FC34262DFD0600467ECC /* StoreCheat.swift in Sources */,
 				322BA0BF2629BC0C0050ED4B /* ContentView.swift in Sources */,
 				811EA043262C41B100035A17 /* NetworkEndpoints.swift in Sources */,
 			);
@@ -502,7 +518,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
-				DEVELOPMENT_TEAM = 3LJ9H6BD56;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CheatManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;

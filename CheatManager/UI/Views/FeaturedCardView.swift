@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FeaturedCard: View {
+struct FeaturedCardView: View {
     @Binding var image: UIImage
     var mod: Mod
     @State var hovering: Bool = false
