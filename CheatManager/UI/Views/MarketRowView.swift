@@ -27,7 +27,8 @@ struct CellButtonStyle: ButtonStyle{
 struct MarketRowView: View {
     let storeCheat: StoreCheat
     @Environment(\.sizeCategory) var sizeCategory
-    
+    @State private var showDetails: Bool = false
+
     var body: some View {
         ZStack {
             HStack {
@@ -43,11 +44,15 @@ struct MarketRowView: View {
                         .foregroundColor(.gray).opacity(0.8)
                 }
                 Spacer()
+                
+                // "GET" Button
                 Button(action: {
-                     print("sign up bin tapped")
-                 }) {
+                    self.showDetails = true
+                }) {
                      Text("GET")
-                }.buttonStyle(CellButtonStyle(sizeCategory: _sizeCategory))
+                }
+                .sheet(isPresented: self.$showDetails) { CheatDetailView(storeCheat: storeCheat) }
+                .buttonStyle(CellButtonStyle(sizeCategory: _sizeCategory))
             }.frame(width: 340, height: 70)
         }
     }

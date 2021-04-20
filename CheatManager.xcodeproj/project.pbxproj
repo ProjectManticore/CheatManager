@@ -21,6 +21,7 @@
 		32B40EF92629C44E00C73004 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EF82629C44E00C73004 /* NetworkHandler.swift */; };
 		32B40F04262A668700C73004 /* ModDepiction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40F03262A668700C73004 /* ModDepiction.swift */; };
 		811EA043262C41B100035A17 /* NetworkEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EA042262C41B100035A17 /* NetworkEndpoints.swift */; };
+		81521BAC262F283F00B1DFAB /* CheatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81521BAB262F283F00B1DFAB /* CheatDetailView.swift */; };
 		81E1FC28262DFAD400467ECC /* PackagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1FC27262DFAD400467ECC /* PackagesView.swift */; };
 		81E1FC34262DFD0600467ECC /* StoreCheat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1FC33262DFD0600467ECC /* StoreCheat.swift */; };
 		831D98A9262E11B800946656 /* MarketRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D98A8262E11B800946656 /* MarketRowView.swift */; };
@@ -66,6 +67,7 @@
 		32B40EF82629C44E00C73004 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		32B40F03262A668700C73004 /* ModDepiction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModDepiction.swift; sourceTree = "<group>"; };
 		811EA042262C41B100035A17 /* NetworkEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoints.swift; sourceTree = "<group>"; };
+		81521BAB262F283F00B1DFAB /* CheatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatDetailView.swift; sourceTree = "<group>"; };
 		81E1FC27262DFAD400467ECC /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
 		81E1FC33262DFD0600467ECC /* StoreCheat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCheat.swift; sourceTree = "<group>"; };
 		831D98A8262E11B800946656 /* MarketRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRowView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				322BA0ED2629BC440050ED4B /* TabView.swift */,
 				32B40EDE2629BD9000C73004 /* HomeView.swift */,
 				81E1FC27262DFAD400467ECC /* PackagesView.swift */,
+				81521BAB262F283F00B1DFAB /* CheatDetailView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				322BA0BB2629BC0C0050ED4B /* AppDelegate.swift in Sources */,
 				322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */,
 				32B40F04262A668700C73004 /* ModDepiction.swift in Sources */,
+				81521BAC262F283F00B1DFAB /* CheatDetailView.swift in Sources */,
 				32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */,
 				32B40EF12629C1FE00C73004 /* Defintions.swift in Sources */,
 				81E1FC34262DFD0600467ECC /* StoreCheat.swift in Sources */,
@@ -514,7 +518,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3LJ9H6BD56;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CheatManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
