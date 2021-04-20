@@ -15,13 +15,13 @@ struct HomeView: View {
     
     // TODO: Handle this via JSON parsing from API without freezing the UI
 	let featuredCheats = [
-        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
-        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3")
+        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
+        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3")
     ]
     
     let arcadeCheats = [
-        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
-        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3")
+        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
+        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3")
     ]
 	
     var body: some View {
@@ -31,6 +31,7 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
 							ForEach(featuredCheats) { featuredCheat in
+                                // TODO: Show CheatDetailView with the data from featured card
 								FeaturedCardView(image: $image, mod: FeaturedPage.CardPackage(imglink: featuredCheat.gameBanner, title: featuredCheat.gameName, mod: Mod(icon: "", name: featuredCheat.gameName, id: featuredCheat.id, gameBundleID: featuredCheat.gameBundleID, gameName: featuredCheat.gameName, maintainer: featuredCheat.author)).mod)
 									.frame(width: 300, height: 200)
 									.padding()
