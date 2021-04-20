@@ -7,39 +7,48 @@
 
 import SwiftUI
 
+struct CellButtonStyle: ButtonStyle{
+    @Environment(\.sizeCategory) var sizeCategory
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(sizeCategory >= ContentSizeCategory.extraExtraExtraLarge ? Font.system(size: 25).bold() : Font.body.bold())
+            .foregroundColor(Color(.systemBlue))
+            .padding(.horizontal, 15)
+            .padding(.vertical, 5)
+            .textCase(.uppercase)
+            .frame(minWidth: 70)
+            .background(Capsule().fill(Color(.tertiarySystemGroupedBackground)))
+            .opacity(configuration.isPressed ? 0.3: 1)
+    }
+    
+}
+
 struct MarketRowView: View {
     let storeCheat: StoreCheat
+    @Environment(\.sizeCategory) var sizeCategory
     
     var body: some View {
-        HStack(alignment: .top) {
-            Image(storeCheat.gameIcon)
-                .resizable()
-                .cornerRadius(10)
-                .scaledToFit()
-            
-            VStack(alignment: .leading) {
-                Text(storeCheat.gameName)
-                    .fontWeight(.medium)
-                Text(storeCheat.author)
-                    .foregroundColor(.gray).opacity(0.8)
-            }
-            Spacer()
-            
-            Button(action: {
-                 print("sign up bin tapped")
-             }) {
-                 Text("GET")
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .font(.system(size: 18))
-                    .padding()
-                    .foregroundColor(Color.blue)
-                    .background(Color.red)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 25)
-                            .stroke(Color.white, lineWidth: 2)
-                )
-            }
-            
-        }.frame(width: 340, height: 70)
+        ZStack {
+            HStack {
+                Image(storeCheat.gameIcon)
+                    .resizable()
+                    .cornerRadius(10)
+                    .scaledToFit()
+                
+                VStack(alignment: .leading) {
+                    Text(storeCheat.gameName)
+                        .fontWeight(.medium)
+                    Text(storeCheat.author)
+                        .foregroundColor(.gray).opacity(0.8)
+                }
+                Spacer()
+                Button(action: {
+                     print("sign up bin tapped")
+                 }) {
+                     Text("GET")
+                }.buttonStyle(CellButtonStyle(sizeCategory: _sizeCategory))
+            }.frame(width: 340, height: 70)
+        }
     }
 }
