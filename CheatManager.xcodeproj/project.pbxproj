@@ -18,10 +18,9 @@
 		322BA0EE2629BC440050ED4B /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0ED2629BC440050ED4B /* TabView.swift */; };
 		32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EDE2629BD9000C73004 /* HomeView.swift */; };
 		8111CDD92630702200D39E56 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8111CDD82630702200D39E56 /* APIHandler.swift */; };
-		811EA043262C41B100035A17 /* NetworkEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EA042262C41B100035A17 /* NetworkEndpoints.swift */; };
 		81521BAC262F283F00B1DFAB /* CheatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81521BAB262F283F00B1DFAB /* CheatDetailView.swift */; };
 		81E1FC28262DFAD400467ECC /* PackagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1FC27262DFAD400467ECC /* PackagesView.swift */; };
-		81E1FC34262DFD0600467ECC /* StoreCheat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1FC33262DFD0600467ECC /* StoreCheat.swift */; };
+		81E1FC34262DFD0600467ECC /* CheatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1FC33262DFD0600467ECC /* CheatModels.swift */; };
 		831D98A9262E11B800946656 /* MarketRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D98A8262E11B800946656 /* MarketRowView.swift */; };
 		833B0B44262C8A53009F91AE /* FeaturedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B0B43262C8A53009F91AE /* FeaturedCardView.swift */; };
 /* End PBXBuildFile section */
@@ -62,10 +61,9 @@
 		322BA0F62629BCBF0050ED4B /* CheatManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CheatManager.entitlements; sourceTree = "<group>"; };
 		32B40EDE2629BD9000C73004 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8111CDD82630702200D39E56 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
-		811EA042262C41B100035A17 /* NetworkEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoints.swift; sourceTree = "<group>"; };
 		81521BAB262F283F00B1DFAB /* CheatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatDetailView.swift; sourceTree = "<group>"; };
 		81E1FC27262DFAD400467ECC /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
-		81E1FC33262DFD0600467ECC /* StoreCheat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCheat.swift; sourceTree = "<group>"; };
+		81E1FC33262DFD0600467ECC /* CheatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatModels.swift; sourceTree = "<group>"; };
 		831D98A8262E11B800946656 /* MarketRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRowView.swift; sourceTree = "<group>"; };
 		833B0B43262C8A53009F91AE /* FeaturedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,7 +172,6 @@
 		32B40EEF2629C1DB00C73004 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
-				811EA042262C41B100035A17 /* NetworkEndpoints.swift */,
 				8111CDD82630702200D39E56 /* APIHandler.swift */,
 			);
 			path = Backend;
@@ -192,7 +189,7 @@
 		81E1FC32262DFCEB00467ECC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				81E1FC33262DFD0600467ECC /* StoreCheat.swift */,
+				81E1FC33262DFD0600467ECC /* CheatModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,11 +331,10 @@
 				322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */,
 				81521BAC262F283F00B1DFAB /* CheatDetailView.swift in Sources */,
 				32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */,
-				81E1FC34262DFD0600467ECC /* StoreCheat.swift in Sources */,
+				81E1FC34262DFD0600467ECC /* CheatModels.swift in Sources */,
 				831D98A9262E11B800946656 /* MarketRowView.swift in Sources */,
 				8111CDD92630702200D39E56 /* APIHandler.swift in Sources */,
 				322BA0BF2629BC0C0050ED4B /* ContentView.swift in Sources */,
-				811EA043262C41B100035A17 /* NetworkEndpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
