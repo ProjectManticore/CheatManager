@@ -14,7 +14,7 @@ struct CheatDetailView: View {
             ZStack {
                 ZStack {
                     // Gamee Banner
-                    Image(storeCheat.gameBanner)
+                    Image(storeCheat.game.banner)
                         .resizable()
                         .scaledToFill()
                     
@@ -25,7 +25,7 @@ struct CheatDetailView: View {
 
                 HStack {
                     // Game Icon
-                    Image(storeCheat.gameIcon)
+                    Image(storeCheat.game.icon)
                         .resizable()
                         .cornerRadius(10)
                         .scaledToFit()
@@ -41,7 +41,7 @@ struct CheatDetailView: View {
                             .foregroundColor(Color.gray).opacity(0.7)
                         
                         // Game Name
-                        Text(storeCheat.gameName)
+                        Text(storeCheat.game.name)
                             .font(.title)
                             .fontWeight(.bold)
                     }
@@ -56,7 +56,7 @@ struct CheatDetailView: View {
             }
             
             // Description Section
-            Text(storeCheat.description)
+            Text("This is the description")
                 .padding(.leading).padding(.trailing)
                 .font(.body)
                 .lineLimit(3)

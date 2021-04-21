@@ -8,17 +8,30 @@
 import SwiftUI
 import UIKit
 
-let net = NetworkHandling()
-
 struct HomeView: View {
-	@State var image: UIImage = UIImage(named: "Stickerpack")!
+	@State var image: UIImage = UIImage(named: "defaultBanner")!
     
     // TODO: Handle this via JSON parsing from API without freezing the UI
     @State var featuredCheats: [StoreCheat] = []
     
-    let arcadeCheats = [
-        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
-        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3")
+    let arcadeCheats: [StoreCheat] = [
+        StoreCheat(
+            version: 10.1,
+            upvotes: 10,
+            downvotes: 10,
+            installations: 10,
+            createdAt: "0",
+            id: "28765",
+            name: "Subway",
+            author: "Rpwnage",
+            v: 22,
+            game: StoreGame(
+                id: "76857698u",
+                version: 1765,
+                name: "8fzh",
+                bundleID: "com.some.bundle"
+            )
+        )
     ]
 	
     var body: some View {
@@ -28,8 +41,7 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
 							ForEach(featuredCheats) { featuredCheat in
-                                // TODO: Show CheatDetailView with the data from featured card
-								FeaturedCardView(image: $image, mod: FeaturedPage.CardPackage(imglink: featuredCheat.gameBanner, title: featuredCheat.gameName, mod: Mod(icon: "", name: featuredCheat.gameName, id: featuredCheat.id, gameBundleID: featuredCheat.gameBundleID, gameName: featuredCheat.gameName, maintainer: featuredCheat.author)).mod)
+                                FeaturedCardView(image: self.$image, storeCheat: featuredCheat)
 									.frame(width: 300, height: 200)
 									.padding()
 							}

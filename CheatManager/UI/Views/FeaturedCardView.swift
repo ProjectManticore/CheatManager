@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeaturedCardView: View {
     @Binding var image: UIImage
-    var mod: Mod
+    var storeCheat: StoreCheat
     @State var hovering: Bool = false
     var body: some View {
         ZStack {
@@ -26,11 +26,11 @@ struct FeaturedCardView: View {
                 VStack(alignment: .leading) {
                     Spacer()
                     VStack(alignment: .trailing) {
-                        Text(mod.gameName)
+                        Text(storeCheat.game.name)
                             .font(.body)
                             .fontWeight(.semibold)
                             .foregroundColor(Color.secondary)
-                        Text(mod.name)
+                        Text(storeCheat.game.name)
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(Color.white)

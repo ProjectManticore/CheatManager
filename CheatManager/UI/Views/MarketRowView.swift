@@ -32,13 +32,14 @@ struct MarketRowView: View {
     var body: some View {
         ZStack {
             HStack {
-                Image(storeCheat.gameIcon)
+                Image(storeCheat.game.icon)
                     .resizable()
                     .cornerRadius(10)
                     .scaledToFit()
+                    .frame(height: 50)
                 
                 VStack(alignment: .leading) {
-                    Text(storeCheat.gameName)
+                    Text(storeCheat.game.name)
                         .fontWeight(.medium)
                     Text(storeCheat.author)
                         .foregroundColor(.gray).opacity(0.8)

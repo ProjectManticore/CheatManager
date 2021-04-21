@@ -17,9 +17,6 @@
 		322BA0DD2629BC100050ED4B /* CheatManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0DC2629BC100050ED4B /* CheatManagerUITests.swift */; };
 		322BA0EE2629BC440050ED4B /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0ED2629BC440050ED4B /* TabView.swift */; };
 		32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EDE2629BD9000C73004 /* HomeView.swift */; };
-		32B40EF12629C1FE00C73004 /* Defintions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EF02629C1FD00C73004 /* Defintions.swift */; };
-		32B40EF92629C44E00C73004 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EF82629C44E00C73004 /* NetworkHandler.swift */; };
-		32B40F04262A668700C73004 /* ModDepiction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40F03262A668700C73004 /* ModDepiction.swift */; };
 		8111CDD92630702200D39E56 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8111CDD82630702200D39E56 /* APIHandler.swift */; };
 		811EA043262C41B100035A17 /* NetworkEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EA042262C41B100035A17 /* NetworkEndpoints.swift */; };
 		81521BAC262F283F00B1DFAB /* CheatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81521BAB262F283F00B1DFAB /* CheatDetailView.swift */; };
@@ -64,9 +61,6 @@
 		322BA0ED2629BC440050ED4B /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		322BA0F62629BCBF0050ED4B /* CheatManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CheatManager.entitlements; sourceTree = "<group>"; };
 		32B40EDE2629BD9000C73004 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		32B40EF02629C1FD00C73004 /* Defintions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defintions.swift; sourceTree = "<group>"; };
-		32B40EF82629C44E00C73004 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
-		32B40F03262A668700C73004 /* ModDepiction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModDepiction.swift; sourceTree = "<group>"; };
 		8111CDD82630702200D39E56 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		811EA042262C41B100035A17 /* NetworkEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoints.swift; sourceTree = "<group>"; };
 		81521BAB262F283F00B1DFAB /* CheatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatDetailView.swift; sourceTree = "<group>"; };
@@ -180,8 +174,6 @@
 		32B40EEF2629C1DB00C73004 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
-				32B40EF02629C1FD00C73004 /* Defintions.swift */,
-				32B40EF82629C44E00C73004 /* NetworkHandler.swift */,
 				811EA042262C41B100035A17 /* NetworkEndpoints.swift */,
 				8111CDD82630702200D39E56 /* APIHandler.swift */,
 			);
@@ -191,7 +183,6 @@
 		81E1FC26262DFAC000467ECC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32B40F03262A668700C73004 /* ModDepiction.swift */,
 				833B0B43262C8A53009F91AE /* FeaturedCardView.swift */,
 				831D98A8262E11B800946656 /* MarketRowView.swift */,
 			);
@@ -336,16 +327,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32B40EF92629C44E00C73004 /* NetworkHandler.swift in Sources */,
 				833B0B44262C8A53009F91AE /* FeaturedCardView.swift in Sources */,
 				322BA0EE2629BC440050ED4B /* TabView.swift in Sources */,
 				81E1FC28262DFAD400467ECC /* PackagesView.swift in Sources */,
 				322BA0BB2629BC0C0050ED4B /* AppDelegate.swift in Sources */,
 				322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */,
-				32B40F04262A668700C73004 /* ModDepiction.swift in Sources */,
 				81521BAC262F283F00B1DFAB /* CheatDetailView.swift in Sources */,
 				32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */,
-				32B40EF12629C1FE00C73004 /* Defintions.swift in Sources */,
 				81E1FC34262DFD0600467ECC /* StoreCheat.swift in Sources */,
 				831D98A9262E11B800946656 /* MarketRowView.swift in Sources */,
 				8111CDD92630702200D39E56 /* APIHandler.swift in Sources */,
