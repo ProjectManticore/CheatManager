@@ -16,12 +16,12 @@ struct CheatDetailView: View {
                     // Gamee Banner
                     Image(storeCheat.gameBanner)
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                     
                     Rectangle()
                         .foregroundColor(.clear)
                         .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.systemBackground), Color(UIColor.systemBackground), Color.clear.opacity(0.5)]), startPoint: .bottom, endPoint: .top))
-                }.frame(height: 240)
+                }.frame(minWidth: 0, maxWidth: .infinity).frame(height: 240)
 
                 HStack {
                     // Game Icon
@@ -30,6 +30,7 @@ struct CheatDetailView: View {
                         .cornerRadius(10)
                         .scaledToFit()
                         .frame(height: 70)
+                    
                         .padding(.leading).padding(.top).padding(.bottom).padding(.trailing, 10)
                     
                     VStack(alignment: .leading) {
