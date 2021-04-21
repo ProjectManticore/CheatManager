@@ -7,6 +7,17 @@
 
 import Foundation
 
+class FeaturedCheatsResponse: Codable {
+    let status: String
+    let data: [StoreCheat]
+
+    init(status: String, data: [StoreCheat]) {
+        self.status = status
+        self.data = data
+    }
+}
+
+
 struct StoreCheat: Codable, Identifiable {
 	let id: String
 	let author: String

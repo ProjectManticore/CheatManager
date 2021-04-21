@@ -14,12 +14,7 @@ struct HomeView: View {
 	@State var image: UIImage = UIImage(named: "Stickerpack")!
     
     // TODO: Handle this via JSON parsing from API without freezing the UI
-	let featuredCheats = [
-        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
-        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
-        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
-        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3")
-    ]
+    @State var featuredCheats: [StoreCheat] = []
     
     let arcadeCheats = [
         StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
@@ -41,6 +36,10 @@ struct HomeView: View {
                         }
                     }
                     Spacer()
+                }.onAppear {
+                    CMAPI().getFeaturedCheats { (featuredCheats) in
+                        self.featuredCheats = featuredCheats.data
+                    }
                 }
                 
                 VStack(alignment: .leading) {
