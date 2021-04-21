@@ -47,11 +47,15 @@ struct CheatDetailView: View {
                     }
                     
                     Spacer()
+                    Button(action: {
+                        print("GET Button pressed.")
+                    }) {
+                         Text("GET")
+                    }.buttonStyle(CellButtonStyle()).padding()
                 }
             }
             
             // Description Section
-            Divider()
             Text(storeCheat.description)
                 .padding(.leading).padding(.trailing)
                 .font(.body)

@@ -27,7 +27,8 @@ struct FeaturedCardView: View {
                     Spacer()
                     VStack(alignment: .trailing) {
                         Text(mod.gameName)
-                            .font(.callout)
+                            .font(.body)
+                            .fontWeight(.semibold)
                             .foregroundColor(Color.secondary)
                         Text(mod.name)
                             .fontWeight(.bold)
