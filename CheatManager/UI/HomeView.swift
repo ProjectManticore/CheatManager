@@ -16,6 +16,8 @@ struct HomeView: View {
     // TODO: Handle this via JSON parsing from API without freezing the UI
 	let featuredCheats = [
         StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
+        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
+        StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3"),
         StoreCheat(id: "11", author: "rpwnage", version: "0.0.1", description:"Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick Lorem ipsum dolor kernel picknic dpick ", gameIcon: "SubwaySurfersIcon", gameBanner: "Stickerpack", gameName: "Subway Surfers", gameBundleID: "com.some.bundle", gameVersion: "17.2.3")
     ]
     
@@ -38,6 +40,7 @@ struct HomeView: View {
 							}
                         }
                     }
+                    Spacer()
                 }
                 
                 VStack(alignment: .leading) {
