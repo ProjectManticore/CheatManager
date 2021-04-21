@@ -6,33 +6,6 @@
 //
 
 import Foundation
-//
-//class FeaturedCheatsResponse: Codable {
-//    let status: String
-//    let data: [StoreCheat]
-//}
-//
-//struct StoreGame: Codable, Identifiable {
-//    var id: String = "1337"
-//    var name: String
-//    var bundle_id: String
-//    var icon: String = "Sus"
-//    var banner: String = "bab"
-//    var version: Float = 0.1
-//}
-//
-//struct StoreCheat: Codable, Identifiable {
-//    var id: String = "1337"
-//    var name: String
-//    var version: Double = 0.1
-//    var upvotes: Int = 0
-//    var downvotes: Int = 0
-//    var installations: Int = 0
-//    var author: String
-//    var description: String = "Awesome Game Cheat!"
-//    var game: StoreGame
-//    var createdAt: String = "w"
-//}
 
 struct FeaturedCheatsResponse: Codable {
     let status: String
