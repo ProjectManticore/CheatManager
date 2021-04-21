@@ -35,7 +35,8 @@ struct StoreGame: Codable {
     let name, bundleID: String
     var icon: String = "defaultAppicon"
     var banner: String = "defaultBanner"
-
+    var category: String = "none"
+    
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case version, name
