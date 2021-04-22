@@ -94,6 +94,7 @@
 				81EBA85A2631774F00C1F4FF /* Makefile */,
 				322BA0B92629BC0C0050ED4B /* CheatManager */,
 				322BA0B82629BC0C0050ED4B /* Products */,
+				81EBA87026318F8300C1F4FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +169,13 @@
 				81E1FC33262DFD0600467ECC /* CheatModels.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		81EBA87026318F8300C1F4FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
