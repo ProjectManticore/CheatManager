@@ -6,3 +6,5 @@ We're looking forward to make CheatManager available for all iOS Devices. We're 
 
 ## Contribution
 Feel free to create pull requests for any kind of improvements, bug fixes or enhancements
+To update the linked CheatKit Submodule run 
+`git submodule update --recursive --remote`
