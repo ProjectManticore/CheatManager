@@ -58,6 +58,7 @@
 		81521BAB262F283F00B1DFAB /* CheatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatDetailView.swift; sourceTree = "<group>"; };
 		81E1FC27262DFAD400467ECC /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
 		81E1FC33262DFD0600467ECC /* CheatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatModels.swift; sourceTree = "<group>"; };
+		81EBA85A2631774F00C1F4FF /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		831D98A8262E11B800946656 /* MarketRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRowView.swift; sourceTree = "<group>"; };
 		833B0B43262C8A53009F91AE /* FeaturedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +91,7 @@
 		322BA0AE2629BC0C0050ED4B = {
 			isa = PBXGroup;
 			children = (
+				81EBA85A2631774F00C1F4FF /* Makefile */,
 				322BA0B92629BC0C0050ED4B /* CheatManager */,
 				322BA0B82629BC0C0050ED4B /* Products */,
 			);
