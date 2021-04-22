@@ -17,3 +17,7 @@ include $(THEOS_MAKE_PATH)/application.mk
 
 after-clean::
 	if [ -d "packages" ]; then rm -rf packages; fi
+
+after-all::
+	@echo "Copying CheatKit..."
+	cp -R CheatKit/.theos/obj/debug/CheatKit.framework CHeatManager/Frameworks

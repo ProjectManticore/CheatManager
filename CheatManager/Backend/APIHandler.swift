@@ -9,7 +9,7 @@ import Foundation
 
 class CMAPIEndpoints {
     // Root Address to CheatManager Backend API
-    let Root: String = "http://192.168.178.126:8000"
+    let Root: String = "http://192.168.178.126:1337"
     
     // Endpoints
     let getFeaturedCheats:  String = "/store/featured"

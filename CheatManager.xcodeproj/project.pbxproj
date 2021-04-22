@@ -56,6 +56,8 @@
 		32B40EDE2629BD9000C73004 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8111CDD82630702200D39E56 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		81521BAB262F283F00B1DFAB /* CheatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatDetailView.swift; sourceTree = "<group>"; };
+		8186BB212631A38100BB3A00 /* CheatKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CheatKit.framework; path = CheatManager/Frameworks/CheatKit.framework; sourceTree = "<group>"; };
+		8186BB342631A46100BB3A00 /* CheatKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CheatKit.framework; sourceTree = "<group>"; };
 		81E1FC27262DFAD400467ECC /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
 		81E1FC33262DFD0600467ECC /* CheatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatModels.swift; sourceTree = "<group>"; };
 		81EBA85A2631774F00C1F4FF /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		322BA0B92629BC0C0050ED4B /* CheatManager */ = {
 			isa = PBXGroup;
 			children = (
+				8186BB2B2631A44600BB3A00 /* Frameworks */,
 				81E1FC32262DFCEB00467ECC /* Models */,
 				322BA0F22629BC7D0050ED4B /* UI */,
 				32B40EEF2629C1DB00C73004 /* Backend */,
@@ -154,6 +157,14 @@
 			path = Backend;
 			sourceTree = "<group>";
 		};
+		8186BB2B2631A44600BB3A00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8186BB342631A46100BB3A00 /* CheatKit.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		81E1FC26262DFAC000467ECC /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +185,7 @@
 		81EBA87026318F8300C1F4FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8186BB212631A38100BB3A00 /* CheatKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -490,6 +502,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
 				DEVELOPMENT_TEAM = 3LJ9H6BD56;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CheatManager/Frameworks",
+					"$(PROJECT_DIR)/CheatManager/Frameworkse",
+				);
 				INFOPLIST_FILE = CheatManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -514,6 +531,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
 				DEVELOPMENT_TEAM = 3LJ9H6BD56;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CheatManager/Frameworks",
+					"$(PROJECT_DIR)/CheatManager/Frameworkse",
+				);
 				INFOPLIST_FILE = CheatManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (

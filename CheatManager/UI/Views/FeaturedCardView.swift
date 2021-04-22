@@ -11,6 +11,8 @@ struct FeaturedCardView: View {
     @Binding var image: UIImage
     var storeCheat: StoreCheat
     @State var hovering: Bool = false
+    @State private var showDetails: Bool = false
+
     var body: some View {
         ZStack {
             Color.gray
@@ -38,9 +40,14 @@ struct FeaturedCardView: View {
                     .padding()
                 }
             }
-
         }
         .cornerRadius(15)
         .shadow(radius: 5)
+        .gesture(LongPressGesture().onChanged { _ in self.showDetails = true })
+        .sheet(isPresented: self.$showDetails, onDismiss: {
+            self.showDetails = false
+        }) {
+            CheatDetailView(storeCheat: storeCheat)
+        }
     }
 }
