@@ -1,23 +1,12 @@
 TARGET = iphone:clang:latest:14.3
-ARCHS = arm64 arm64e
+ARCHS = arm64
 INSTALL_TARGET_PROCESSES = CheatManager
 
 include $(THEOS)/makefiles/common.mk
-SUBPROJECTS += CheatKit
-include $(THEOS)/makefiles/aggregate.mk
 
-APPLICATION_NAME = CheatManager
-CheatManagerSource = CheatManager
+XCODEPROJ_NAME = CheatManager
 
-CheatManager_EXTRA_FRAMEWORKS = CheatKit
-CheatManager_FRAMEWORKS = SwiftUI
-CheatManager_FILES = $(wildcard $(CheatManagerSource)/*.swift $(CheatManagerSource)/*/*.swift $(CheatManagerSource)/*/*/*.swift)
+CheatManager_XCODE_SCHEME = CheatManager
+# CheatManager_CODESIGN_FLAGS = -SexampleAppEntitlements.xml
 
-include $(THEOS_MAKE_PATH)/application.mk
-
-after-clean::
-	if [ -d "packages" ]; then rm -rf packages; fi
-
-after-all::
-	@echo "Copying CheatKit..."
-	cp -R CheatKit/.theos/obj/debug/CheatKit.framework CHeatManager/Frameworks
+include $(THEOS_MAKE_PATH)/xcodeproj.mk

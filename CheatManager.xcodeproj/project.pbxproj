@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,9 @@
 		32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EDE2629BD9000C73004 /* HomeView.swift */; };
 		8111CDD92630702200D39E56 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8111CDD82630702200D39E56 /* APIHandler.swift */; };
 		81521BAC262F283F00B1DFAB /* CheatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81521BAB262F283F00B1DFAB /* CheatDetailView.swift */; };
+		8186BB6A2631B44F00BB3A00 /* CheatKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = 8186BB5C2631B35600BB3A00 /* CheatKit.framework */; platformFilter = ios; };
+		8186BB6E2631B52300BB3A00 /* CheatKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8186BB5C2631B35600BB3A00 /* CheatKit.framework */; platformFilter = ios; };
+		8186BB6F2631B52300BB3A00 /* CheatKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8186BB5C2631B35600BB3A00 /* CheatKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81E1FC28262DFAD400467ECC /* PackagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1FC27262DFAD400467ECC /* PackagesView.swift */; };
 		81E1FC34262DFD0600467ECC /* CheatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1FC33262DFD0600467ECC /* CheatModels.swift */; };
 		831D98A9262E11B800946656 /* MarketRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D98A8262E11B800946656 /* MarketRowView.swift */; };
@@ -24,21 +27,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		322BA0CE2629BC100050ED4B /* PBXContainerItemProxy */ = {
+		8186BB5B2631B35600BB3A00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 322BA0AF2629BC0C0050ED4B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 322BA0B62629BC0C0050ED4B;
-			remoteInfo = CheatManager;
-		};
-		322BA0D92629BC100050ED4B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 322BA0AF2629BC0C0050ED4B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 322BA0B62629BC0C0050ED4B;
-			remoteInfo = CheatManager;
+			containerPortal = 8186BB572631B35600BB3A00 /* CheatKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 81E4221B26315D4400BE96F9;
+			remoteInfo = CheatKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8186BB702631B52300BB3A00 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8186BB6F2631B52300BB3A00 /* CheatKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		322BA0B72629BC0C0050ED4B /* CheatManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheatManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,15 +59,12 @@
 		322BA0C32629BC100050ED4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		322BA0C62629BC100050ED4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		322BA0C82629BC100050ED4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		322BA0CD2629BC100050ED4B /* CheatManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheatManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		322BA0D82629BC100050ED4B /* CheatManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheatManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		322BA0ED2629BC440050ED4B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		322BA0F62629BCBF0050ED4B /* CheatManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CheatManager.entitlements; sourceTree = "<group>"; };
 		32B40EDE2629BD9000C73004 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8111CDD82630702200D39E56 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		81521BAB262F283F00B1DFAB /* CheatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatDetailView.swift; sourceTree = "<group>"; };
-		8186BB212631A38100BB3A00 /* CheatKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CheatKit.framework; path = CheatManager/Frameworks/CheatKit.framework; sourceTree = "<group>"; };
-		8186BB342631A46100BB3A00 /* CheatKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CheatKit.framework; sourceTree = "<group>"; };
+		8186BB572631B35600BB3A00 /* CheatKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CheatKit.xcodeproj; path = CheatKit/CheatKit.xcodeproj; sourceTree = "<group>"; };
 		81E1FC27262DFAD400467ECC /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
 		81E1FC33262DFD0600467ECC /* CheatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatModels.swift; sourceTree = "<group>"; };
 		81EBA85A2631774F00C1F4FF /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -70,20 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		322BA0CA2629BC100050ED4B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		322BA0D52629BC100050ED4B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				8186BB6E2631B52300BB3A00 /* CheatKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +87,7 @@
 		322BA0AE2629BC0C0050ED4B = {
 			isa = PBXGroup;
 			children = (
+				8186BB572631B35600BB3A00 /* CheatKit.xcodeproj */,
 				81EBA85A2631774F00C1F4FF /* Makefile */,
 				322BA0B92629BC0C0050ED4B /* CheatManager */,
 				322BA0B82629BC0C0050ED4B /* Products */,
@@ -104,8 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				322BA0B72629BC0C0050ED4B /* CheatManager.app */,
-				322BA0CD2629BC100050ED4B /* CheatManagerTests.xctest */,
-				322BA0D82629BC100050ED4B /* CheatManagerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,7 +106,6 @@
 		322BA0B92629BC0C0050ED4B /* CheatManager */ = {
 			isa = PBXGroup;
 			children = (
-				8186BB2B2631A44600BB3A00 /* Frameworks */,
 				81E1FC32262DFCEB00467ECC /* Models */,
 				322BA0F22629BC7D0050ED4B /* UI */,
 				32B40EEF2629C1DB00C73004 /* Backend */,
@@ -157,12 +149,12 @@
 			path = Backend;
 			sourceTree = "<group>";
 		};
-		8186BB2B2631A44600BB3A00 /* Frameworks */ = {
+		8186BB582631B35600BB3A00 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8186BB342631A46100BB3A00 /* CheatKit.framework */,
+				8186BB5C2631B35600BB3A00 /* CheatKit.framework */,
 			);
-			path = Frameworks;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		81E1FC26262DFAC000467ECC /* Views */ = {
@@ -185,7 +177,6 @@
 		81EBA87026318F8300C1F4FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8186BB212631A38100BB3A00 /* CheatKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -200,6 +191,7 @@
 				322BA0B32629BC0C0050ED4B /* Sources */,
 				322BA0B42629BC0C0050ED4B /* Frameworks */,
 				322BA0B52629BC0C0050ED4B /* Resources */,
+				8186BB702631B52300BB3A00 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,42 +201,6 @@
 			productName = CheatManager;
 			productReference = 322BA0B72629BC0C0050ED4B /* CheatManager.app */;
 			productType = "com.apple.product-type.application";
-		};
-		322BA0CC2629BC100050ED4B /* CheatManagerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 322BA0E42629BC100050ED4B /* Build configuration list for PBXNativeTarget "CheatManagerTests" */;
-			buildPhases = (
-				322BA0C92629BC100050ED4B /* Sources */,
-				322BA0CA2629BC100050ED4B /* Frameworks */,
-				322BA0CB2629BC100050ED4B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				322BA0CF2629BC100050ED4B /* PBXTargetDependency */,
-			);
-			name = CheatManagerTests;
-			productName = CheatManagerTests;
-			productReference = 322BA0CD2629BC100050ED4B /* CheatManagerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		322BA0D72629BC100050ED4B /* CheatManagerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 322BA0E72629BC100050ED4B /* Build configuration list for PBXNativeTarget "CheatManagerUITests" */;
-			buildPhases = (
-				322BA0D42629BC100050ED4B /* Sources */,
-				322BA0D52629BC100050ED4B /* Frameworks */,
-				322BA0D62629BC100050ED4B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				322BA0DA2629BC100050ED4B /* PBXTargetDependency */,
-			);
-			name = CheatManagerUITests;
-			productName = CheatManagerUITests;
-			productReference = 322BA0D82629BC100050ED4B /* CheatManagerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -257,14 +213,6 @@
 				TargetAttributes = {
 					322BA0B62629BC0C0050ED4B = {
 						CreatedOnToolsVersion = 12.4;
-					};
-					322BA0CC2629BC100050ED4B = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 322BA0B62629BC0C0050ED4B;
-					};
-					322BA0D72629BC100050ED4B = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 322BA0B62629BC0C0050ED4B;
 					};
 				};
 			};
@@ -279,14 +227,28 @@
 			mainGroup = 322BA0AE2629BC0C0050ED4B;
 			productRefGroup = 322BA0B82629BC0C0050ED4B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8186BB582631B35600BB3A00 /* Products */;
+					ProjectRef = 8186BB572631B35600BB3A00 /* CheatKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				322BA0B62629BC0C0050ED4B /* CheatManager */,
-				322BA0CC2629BC100050ED4B /* CheatManagerTests */,
-				322BA0D72629BC100050ED4B /* CheatManagerUITests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8186BB5C2631B35600BB3A00 /* CheatKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CheatKit.framework;
+			remoteRef = 8186BB5B2631B35600BB3A00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		322BA0B52629BC0C0050ED4B /* Resources */ = {
@@ -294,22 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				322BA0C72629BC100050ED4B /* LaunchScreen.storyboard in Resources */,
+				8186BB6A2631B44F00BB3A00 /* CheatKit.framework in Resources */,
 				322BA0C42629BC100050ED4B /* Preview Assets.xcassets in Resources */,
 				322BA0C12629BC100050ED4B /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		322BA0CB2629BC100050ED4B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		322BA0D62629BC100050ED4B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,34 +283,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		322BA0C92629BC100050ED4B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		322BA0D42629BC100050ED4B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		322BA0CF2629BC100050ED4B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 322BA0B62629BC0C0050ED4B /* CheatManager */;
-			targetProxy = 322BA0CE2629BC100050ED4B /* PBXContainerItemProxy */;
-		};
-		322BA0DA2629BC100050ED4B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 322BA0B62629BC0C0050ED4B /* CheatManager */;
-			targetProxy = 322BA0D92629BC100050ED4B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		322BA0C52629BC100050ED4B /* LaunchScreen.storyboard */ = {
@@ -550,90 +472,6 @@
 			};
 			name = Release;
 		};
-		322BA0E52629BC100050ED4B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUGF4RZ8S8;
-				INFOPLIST_FILE = CheatManagerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manticoreteam.CheatManagerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CheatManager.app/CheatManager";
-			};
-			name = Debug;
-		};
-		322BA0E62629BC100050ED4B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUGF4RZ8S8;
-				INFOPLIST_FILE = CheatManagerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manticoreteam.CheatManagerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CheatManager.app/CheatManager";
-			};
-			name = Release;
-		};
-		322BA0E82629BC100050ED4B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUGF4RZ8S8;
-				INFOPLIST_FILE = CheatManagerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manticoreteam.CheatManagerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CheatManager;
-			};
-			name = Debug;
-		};
-		322BA0E92629BC100050ED4B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUGF4RZ8S8;
-				INFOPLIST_FILE = CheatManagerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manticoreteam.CheatManagerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CheatManager;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -651,24 +489,6 @@
 			buildConfigurations = (
 				322BA0E22629BC100050ED4B /* Debug */,
 				322BA0E32629BC100050ED4B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		322BA0E42629BC100050ED4B /* Build configuration list for PBXNativeTarget "CheatManagerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				322BA0E52629BC100050ED4B /* Debug */,
-				322BA0E62629BC100050ED4B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		322BA0E72629BC100050ED4B /* Build configuration list for PBXNativeTarget "CheatManagerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				322BA0E82629BC100050ED4B /* Debug */,
-				322BA0E92629BC100050ED4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
