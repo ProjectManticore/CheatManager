@@ -13,8 +13,6 @@
 		322BA0C12629BC100050ED4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322BA0C02629BC100050ED4B /* Assets.xcassets */; };
 		322BA0C42629BC100050ED4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322BA0C32629BC100050ED4B /* Preview Assets.xcassets */; };
 		322BA0C72629BC100050ED4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 322BA0C52629BC100050ED4B /* LaunchScreen.storyboard */; };
-		322BA0D22629BC100050ED4B /* CheatManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0D12629BC100050ED4B /* CheatManagerTests.swift */; };
-		322BA0DD2629BC100050ED4B /* CheatManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0DC2629BC100050ED4B /* CheatManagerUITests.swift */; };
 		322BA0EE2629BC440050ED4B /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0ED2629BC440050ED4B /* TabView.swift */; };
 		32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EDE2629BD9000C73004 /* HomeView.swift */; };
 		8111CDD92630702200D39E56 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8111CDD82630702200D39E56 /* APIHandler.swift */; };
@@ -52,11 +50,7 @@
 		322BA0C62629BC100050ED4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		322BA0C82629BC100050ED4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		322BA0CD2629BC100050ED4B /* CheatManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheatManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		322BA0D12629BC100050ED4B /* CheatManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatManagerTests.swift; sourceTree = "<group>"; };
-		322BA0D32629BC100050ED4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		322BA0D82629BC100050ED4B /* CheatManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheatManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		322BA0DC2629BC100050ED4B /* CheatManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatManagerUITests.swift; sourceTree = "<group>"; };
-		322BA0DE2629BC100050ED4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		322BA0ED2629BC440050ED4B /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		322BA0F62629BCBF0050ED4B /* CheatManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CheatManager.entitlements; sourceTree = "<group>"; };
 		32B40EDE2629BD9000C73004 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -97,8 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				322BA0B92629BC0C0050ED4B /* CheatManager */,
-				322BA0D02629BC100050ED4B /* CheatManagerTests */,
-				322BA0DB2629BC100050ED4B /* CheatManagerUITests */,
 				322BA0B82629BC0C0050ED4B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -136,24 +128,6 @@
 				322BA0C32629BC100050ED4B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		322BA0D02629BC100050ED4B /* CheatManagerTests */ = {
-			isa = PBXGroup;
-			children = (
-				322BA0D12629BC100050ED4B /* CheatManagerTests.swift */,
-				322BA0D32629BC100050ED4B /* Info.plist */,
-			);
-			path = CheatManagerTests;
-			sourceTree = "<group>";
-		};
-		322BA0DB2629BC100050ED4B /* CheatManagerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				322BA0DC2629BC100050ED4B /* CheatManagerUITests.swift */,
-				322BA0DE2629BC100050ED4B /* Info.plist */,
-			);
-			path = CheatManagerUITests;
 			sourceTree = "<group>";
 		};
 		322BA0F22629BC7D0050ED4B /* UI */ = {
@@ -342,7 +316,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				322BA0D22629BC100050ED4B /* CheatManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +323,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				322BA0DD2629BC100050ED4B /* CheatManagerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
