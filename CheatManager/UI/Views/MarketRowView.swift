@@ -36,7 +36,7 @@ struct MarketRowView: View {
                     .resizable()
                     .cornerRadius(10)
                     .scaledToFit()
-                    .frame(height: 50)
+                    .frame(height: 60)
                 
                 VStack(alignment: .leading) {
                     Text(storeCheat.game.name)

@@ -44,6 +44,7 @@ struct CheatDetailView: View {
                         Text(storeCheat.game.name)
                             .font(.title)
                             .fontWeight(.bold)
+                            .lineLimit(1)
                     }
                     
                     Spacer()

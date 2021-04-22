@@ -43,7 +43,7 @@ struct FeaturedCardView: View {
         }
         .cornerRadius(15)
         .shadow(radius: 5)
-        .gesture(LongPressGesture().onChanged { _ in self.showDetails = true })
+        .gesture(TapGesture(count: 1).onEnded { _ in self.showDetails = true })
         .sheet(isPresented: self.$showDetails, onDismiss: {
             self.showDetails = false
         }) {

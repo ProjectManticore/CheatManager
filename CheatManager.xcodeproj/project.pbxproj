@@ -13,7 +13,7 @@
 		322BA0C12629BC100050ED4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322BA0C02629BC100050ED4B /* Assets.xcassets */; };
 		322BA0C42629BC100050ED4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322BA0C32629BC100050ED4B /* Preview Assets.xcassets */; };
 		322BA0C72629BC100050ED4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 322BA0C52629BC100050ED4B /* LaunchScreen.storyboard */; };
-		322BA0EE2629BC440050ED4B /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0ED2629BC440050ED4B /* TabView.swift */; };
+		322BA0EE2629BC440050ED4B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0ED2629BC440050ED4B /* MainTabView.swift */; };
 		32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B40EDE2629BD9000C73004 /* HomeView.swift */; };
 		8111CDD92630702200D39E56 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8111CDD82630702200D39E56 /* APIHandler.swift */; };
 		81521BAC262F283F00B1DFAB /* CheatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81521BAB262F283F00B1DFAB /* CheatDetailView.swift */; };
@@ -51,7 +51,7 @@
 		322BA0C82629BC100050ED4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		322BA0CD2629BC100050ED4B /* CheatManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheatManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		322BA0D82629BC100050ED4B /* CheatManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheatManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		322BA0ED2629BC440050ED4B /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		322BA0ED2629BC440050ED4B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		322BA0F62629BCBF0050ED4B /* CheatManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CheatManager.entitlements; sourceTree = "<group>"; };
 		32B40EDE2629BD9000C73004 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8111CDD82630702200D39E56 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 			children = (
 				81E1FC26262DFAC000467ECC /* Views */,
 				322BA0BE2629BC0C0050ED4B /* ContentView.swift */,
-				322BA0ED2629BC440050ED4B /* TabView.swift */,
+				322BA0ED2629BC440050ED4B /* MainTabView.swift */,
 				32B40EDE2629BD9000C73004 /* HomeView.swift */,
 				81E1FC27262DFAD400467ECC /* PackagesView.swift */,
 				81521BAB262F283F00B1DFAB /* CheatDetailView.swift */,
@@ -321,7 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				833B0B44262C8A53009F91AE /* FeaturedCardView.swift in Sources */,
-				322BA0EE2629BC440050ED4B /* TabView.swift in Sources */,
+				322BA0EE2629BC440050ED4B /* MainTabView.swift in Sources */,
 				81E1FC28262DFAD400467ECC /* PackagesView.swift in Sources */,
 				322BA0BB2629BC0C0050ED4B /* AppDelegate.swift in Sources */,
 				322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */,
