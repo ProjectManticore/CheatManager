@@ -1,0 +1,3 @@
+[submodule "CheatKit"]
+	path = CheatKit
+	url = git@github.com:ProjectManticore/CheatKit.git
