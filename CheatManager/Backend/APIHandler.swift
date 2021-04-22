@@ -42,7 +42,11 @@ class CMAPI {
     func getFeaturedCheats(completion: @escaping (FeaturedCheatsResponse) -> ()) {
         guard let url = URL(string: CMAPIEndpoints().Root + CMAPIEndpoints().getFeaturedCheats) else { return }
         print(url.absoluteString)
-        URLSession.shared.dataTask(with: url){ (data, _, _) in
+        URLSession.shared.dataTask(with: url){ (data, resp, err) in
+            if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
+                // Server is down
+            }
+            
             let featuredCheats = try! JSONDecoder().decode(FeaturedCheatsResponse.self, from: data!)
             DispatchQueue.main.async {
                 completion(featuredCheats)
@@ -62,7 +66,11 @@ class CMAPI {
     func searchByBundleID(BundleID: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
         guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByBundleID + BundleID)) else { return }
         print(url.absoluteString)
-        URLSession.shared.dataTask(with: url){ (data, _, _) in
+        URLSession.shared.dataTask(with: url){ (data, resp, err) in
+            if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
+                // Server is down
+            }
+            
             let searchResultCheats = try! JSONDecoder().decode(FeaturedCheatsResponse.self, from: data!)
             DispatchQueue.main.async {
                 completion(searchResultCheats)
@@ -74,7 +82,11 @@ class CMAPI {
     func searchByAuthor(Author: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
         guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByAuthor + Author)) else { return }
         print(url.absoluteString)
-        URLSession.shared.dataTask(with: url){ (data, _, _) in
+        URLSession.shared.dataTask(with: url){ (data, resp, err) in
+            if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
+                // Server is down
+            }
+            
             let searchResultCheats = try! JSONDecoder().decode(FeaturedCheatsResponse.self, from: data!)
             DispatchQueue.main.async {
                 completion(searchResultCheats)
