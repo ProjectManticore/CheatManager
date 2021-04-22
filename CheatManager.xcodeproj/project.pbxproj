@@ -20,6 +20,7 @@
 		8186BB6A2631B44F00BB3A00 /* CheatKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = 8186BB5C2631B35600BB3A00 /* CheatKit.framework */; platformFilter = ios; };
 		8186BB6E2631B52300BB3A00 /* CheatKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8186BB5C2631B35600BB3A00 /* CheatKit.framework */; platformFilter = ios; };
 		8186BB6F2631B52300BB3A00 /* CheatKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8186BB5C2631B35600BB3A00 /* CheatKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8186BB732631C2A900BB3A00 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8186BB722631C2A900BB3A00 /* NetworkModels.swift */; };
 		81E1FC28262DFAD400467ECC /* PackagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1FC27262DFAD400467ECC /* PackagesView.swift */; };
 		81E1FC34262DFD0600467ECC /* CheatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1FC33262DFD0600467ECC /* CheatModels.swift */; };
 		831D98A9262E11B800946656 /* MarketRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D98A8262E11B800946656 /* MarketRowView.swift */; };
@@ -65,6 +66,7 @@
 		8111CDD82630702200D39E56 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		81521BAB262F283F00B1DFAB /* CheatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatDetailView.swift; sourceTree = "<group>"; };
 		8186BB572631B35600BB3A00 /* CheatKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CheatKit.xcodeproj; path = CheatKit/CheatKit.xcodeproj; sourceTree = "<group>"; };
+		8186BB722631C2A900BB3A00 /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		81E1FC27262DFAD400467ECC /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
 		81E1FC33262DFD0600467ECC /* CheatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatModels.swift; sourceTree = "<group>"; };
 		81EBA85A2631774F00C1F4FF /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				81E1FC33262DFD0600467ECC /* CheatModels.swift */,
+				8186BB722631C2A900BB3A00 /* NetworkModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				322BA0EE2629BC440050ED4B /* MainTabView.swift in Sources */,
 				81E1FC28262DFAD400467ECC /* PackagesView.swift in Sources */,
 				322BA0BB2629BC0C0050ED4B /* AppDelegate.swift in Sources */,
+				8186BB732631C2A900BB3A00 /* NetworkModels.swift in Sources */,
 				322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */,
 				81521BAC262F283F00B1DFAB /* CheatDetailView.swift in Sources */,
 				32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */,

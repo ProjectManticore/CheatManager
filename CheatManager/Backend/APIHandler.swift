@@ -79,7 +79,7 @@ class CMAPI {
         .resume()
     }
     
-    func searchByAuthor(Author: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
+    func searchByAuthor(Author: String, completion: @escaping (Any) -> ()) {
         guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByAuthor + Author)) else { return }
         print(url.absoluteString)
         URLSession.shared.dataTask(with: url){ (data, resp, err) in
