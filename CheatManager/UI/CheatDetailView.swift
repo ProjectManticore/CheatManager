@@ -7,11 +7,20 @@
 
 import SwiftUI
 
+extension View {
+    func hasScrollEnabled(_ value: Bool) -> some View {
+        self.onAppear {
+            UITableView.appearance().isScrollEnabled = value
+        }
+    }
+}
+
 struct CheatDetailView: View {
     let storeCheat: StoreCheat
     var body: some View {
         VStack(alignment: .leading) {
             ZStack {
+                // Banner Image
                 ZStack {
                     // Gamee Banner
                     Image(storeCheat.game.banner)
@@ -23,6 +32,7 @@ struct CheatDetailView: View {
                         .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.systemBackground), Color(UIColor.systemBackground), Color.clear.opacity(0.5)]), startPoint: .bottom, endPoint: .top))
                 }.frame(minWidth: 0, maxWidth: .infinity).frame(height: 240)
 
+                // Game Icon, Name, Author
                 HStack {
                     // Game Icon
                     Image(storeCheat.game.icon)
@@ -56,12 +66,47 @@ struct CheatDetailView: View {
                 }
             }
             
-            // Description Section
-            Text("This is the description")
-                .padding(.leading).padding(.trailing)
-                .font(.body)
-                .lineLimit(3)
+            List {
+                HStack {
+                    Text("Installations")
+                    Spacer()
+                    Text("\(storeCheat.installations)")
+                }.padding(.leading)
+                
+                HStack {
+                    Text("Upvotes")
+                    Spacer()
+                    Text("\(storeCheat.upvotes)")
+                }.padding(.leading)
+                
+                HStack {
+                    Text("Author")
+                    Spacer()
+                    Text("\(storeCheat.author)")
+                }.padding(.leading)
+                
+                HStack {
+                    Text("Version")
+                    Spacer()
+                    Text("\(storeCheat.version)")
+                }.padding(.leading)
+            }
+            .padding(.leading, -20)
+            .hasScrollEnabled(false)
             Spacer()
+
+            // Install/Manage Button
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .foregroundColor(.accentColor)
+                    .padding(20)
+                Text("Install")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.accentColor)
+                    .fontWeight(.semibold)
+                    .font(.largeTitle)
+            }
+            
         }
     }
 }
