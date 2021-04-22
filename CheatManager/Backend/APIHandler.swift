@@ -20,12 +20,22 @@ class CMAPIEndpoints {
 }
 
 class CMAPI {
-    func sendPostJSON(jsonBody: [String: Any], endpoint: String, completion: @escaping (Data) -> ()) {
+    let userDefaults = UserDefaults.standard
+    
+    func sendPostJSON(jsonBody: [String: Any], endpoint: String, authRequired: Bool, completion: @escaping (Data) -> ()) {
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonBody)
         let url = URL(string: (CMAPIEndpoints().Root + endpoint))!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = jsonData
+        if authRequired == true {
+            if self.userDefaults.object(forKey: "token") == nil {
+                self.userDefaults.setValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZpc2xhdGUiLCJpYXQiOjE2MTkxMDYyNDgsImV4cCI6MTY1MDY0MjI0OH0.tJDE2dKLPNftT6QBrc_wF5xlS6KQf2pT3NzMZUWOxZk", forKey: "token")
+                self.sendPostJSON(jsonBody: jsonBody, endpoint: endpoint, authRequired: authRequired, completion: completion)
+            }else {
+                request.setValue(self.userDefaults.string(forKey: "token"), forHTTPHeaderField: "token")
+            }
+        }
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
@@ -55,12 +65,16 @@ class CMAPI {
         .resume()
     }
     
-    func upvoteCheat() {
-        // TODO
+    func upvoteCheat(cheatID: String) {
+        self.sendPostJSON(jsonBody: ["id": cheatID], endpoint: (CMAPIEndpoints().downvoteCheat + cheatID), authRequired: true) { (Data) in
+            print(Data)
+        }
     }
     
-    func downvoteCheat() {
-        // TODO
+    func downvoteCheat(cheatID: String) {
+        self.sendPostJSON(jsonBody: ["id": cheatID], endpoint: (CMAPIEndpoints().downvoteCheat + cheatID), authRequired: true) { (Data) in
+            print(Data)
+        }
     }
     
     func searchByBundleID(BundleID: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
