@@ -17,6 +17,11 @@ extension View {
 
 struct CheatDetailView: View {
     let storeCheat: StoreCheat
+    // Ignore this variable. This is for development purposes only
+    let installedLocally: Bool = false
+    @State var upvoted: Bool = false
+    @State var downvoted: Bool = false
+
     var body: some View {
         VStack(alignment: .leading) {
             ZStack {
@@ -58,11 +63,13 @@ struct CheatDetailView: View {
                     }
                     
                     Spacer()
-                    Button(action: {
-                        print("GET Button pressed.")
-                    }) {
-                         Text("GET")
-                    }.buttonStyle(CellButtonStyle()).padding()
+                    if UIDevice.current.userInterfaceIdiom == .pad {
+                        Button(action: {
+                            print("GET Button pressed.")
+                        }) {
+                             Text("GET")
+                        }.buttonStyle(CellButtonStyle()).padding()
+                    }
                 }
             }
             
@@ -90,21 +97,57 @@ struct CheatDetailView: View {
                     Spacer()
                     Text("\(storeCheat.version)")
                 }.padding(.leading)
+                
+                HStack {
+                    VStack {
+                        Image(systemName: "hand.thumbsup.fill").frame(height: 10)
+                            .foregroundColor(self.upvoted == true ? .accentColor : .primary)
+                            .onTapGesture {
+                                self.downvoted = false
+                                self.upvoted = true
+                            }
+                    }.padding().padding(.leading, 30)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        Image(systemName: "hand.thumbsdown.fill").frame(height: 10)
+                            .foregroundColor(self.downvoted == true ? .accentColor : .primary)
+                            .onTapGesture {
+                                self.downvoted = true
+                                self.upvoted = false
+                            }
+                    }.padding().padding(.trailing, 30)
+                }
+            }
+            .onAppear {
+                UITableView.appearance().isScrollEnabled = false
             }
             .padding(.leading, -20)
             .hasScrollEnabled(false)
             Spacer()
 
             // Install/Manage Button
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(.accentColor)
-                    .padding(20)
-                Text("Install")
-                    .fontWeight(.semibold)
-                    .foregroundColor(.accentColor)
-                    .fontWeight(.semibold)
-                    .font(.largeTitle)
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .foregroundColor(.accentColor)
+                        .padding(.leading, 20).padding(.trailing, 20).padding(.bottom, -20)
+                        .frame(height: 80)
+                   
+                    Text(self.installedLocally == true ? "Modify" : "Install")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                        .fontWeight(.semibold)
+                        .font(.title)
+                }.onTapGesture {
+                    if self.installedLocally == true {
+                        // Pop up a Manage menu (remove/update(?))
+                        print("Manage tapped")
+                    } else {
+                        print("Installing the cheat (ID: \(storeCheat.id), AUTHOR:\(storeCheat.author))")
+                    }
+                }
             }
             
         }
