@@ -98,6 +98,8 @@ struct CheatDetailView: View {
                     Text("\(storeCheat.version)")
                 }.padding(.leading)
                 
+                // Upvote/Downvote buttons
+                // These will not work until moved out of the list.
                 HStack {
                     VStack {
                         Image(systemName: "hand.thumbsup.fill").frame(height: 10)
@@ -119,12 +121,8 @@ struct CheatDetailView: View {
                             }
                     }.padding().padding(.trailing, 30)
                 }
-            }
-            .onAppear {
-                UITableView.appearance().isScrollEnabled = false
-            }
-            .padding(.leading, -20)
-            .hasScrollEnabled(false)
+            }.disabled(true)
+            
             Spacer()
 
             // Install/Manage Button
