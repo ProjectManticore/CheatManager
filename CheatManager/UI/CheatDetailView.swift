@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CheatKit
 
 extension View {
     func hasScrollEnabled(_ value: Bool) -> some View {
@@ -16,9 +17,9 @@ extension View {
 }
 
 struct CheatDetailView: View {
+    let packageManager = PackageManager()
     let storeCheat: StoreCheat
     // Ignore this variable. This is for development purposes only
-    let installedLocally: Bool = false
     @State var upvoted: Bool = false
     @State var downvoted: Bool = false
 
@@ -45,7 +46,6 @@ struct CheatDetailView: View {
                         .cornerRadius(10)
                         .scaledToFit()
                         .frame(height: 70)
-                    
                         .padding(.leading).padding(.top).padding(.bottom).padding(.trailing, 10)
                     
                     VStack(alignment: .leading) {
@@ -132,18 +132,34 @@ struct CheatDetailView: View {
                         .foregroundColor(.accentColor)
                         .padding(.leading, 20).padding(.trailing, 20).padding(.bottom, -20)
                         .frame(height: 80)
-                   
-                    Text(self.installedLocally == true ? "Modify" : "Install")
-                        .fontWeight(.semibold)
-                        .foregroundColor(.primary)
-                        .fontWeight(.semibold)
-                        .font(.title)
+                    
+                    if packageManager.isCheatInstalled(storeCheat.id) == true {
+                        Text("Remove")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.primary)
+                            .fontWeight(.semibold)
+                            .font(.title)
+                    }else if packageManager.installedCheatVersion(storeCheat.id) < storeCheat.version {
+                        Text("Update")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.primary)
+                            .fontWeight(.semibold)
+                            .font(.title)
+                    }else {
+                        Text("Install")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.primary)
+                            .fontWeight(.semibold)
+                            .font(.title)
+                    }
+
                 }.onTapGesture {
-                    if self.installedLocally == true {
-                        // Pop up a Manage menu (remove/update(?))
-                        print("Manage tapped")
-                    } else {
-                        print("Installing the cheat (ID: \(storeCheat.id), AUTHOR:\(storeCheat.author))")
+                    if packageManager.isCheatInstalled(storeCheat.id) == true {
+                        print("Modify tapped")
+                    }else if packageManager.installedCheatVersion(storeCheat.id) < storeCheat.version {
+                        print("Update tapped")
+                    }else {
+                        print("Install tapped")
                     }
                 }
             }

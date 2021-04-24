@@ -35,6 +35,13 @@
 			remoteGlobalIDString = 81E4221B26315D4400BE96F9;
 			remoteInfo = CheatKit;
 		};
+		819805FF26347E2400C52941 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8186BB572631B35600BB3A00 /* CheatKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 81E4221A26315D4400BE96F9;
+			remoteInfo = CheatKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +74,7 @@
 		81521BAB262F283F00B1DFAB /* CheatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatDetailView.swift; sourceTree = "<group>"; };
 		8186BB572631B35600BB3A00 /* CheatKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CheatKit.xcodeproj; path = CheatKit/CheatKit.xcodeproj; sourceTree = "<group>"; };
 		8186BB722631C2A900BB3A00 /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
+		819805FC26347CF000C52941 /* SwiftCheatKit-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftCheatKit-Bridging.h"; sourceTree = "<group>"; };
 		81E1FC27262DFAD400467ECC /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
 		81E1FC33262DFD0600467ECC /* CheatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatModels.swift; sourceTree = "<group>"; };
 		81EBA85A2631774F00C1F4FF /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -118,6 +126,7 @@
 				322BA0C52629BC100050ED4B /* LaunchScreen.storyboard */,
 				322BA0C82629BC100050ED4B /* Info.plist */,
 				322BA0C22629BC100050ED4B /* Preview Content */,
+				819805FC26347CF000C52941 /* SwiftCheatKit-Bridging.h */,
 			);
 			path = CheatManager;
 			sourceTree = "<group>";
@@ -199,6 +208,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8198060026347E2400C52941 /* PBXTargetDependency */,
 			);
 			name = CheatManager;
 			productName = CheatManager;
@@ -288,6 +298,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8198060026347E2400C52941 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CheatKit;
+			targetProxy = 819805FF26347E2400C52941 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		322BA0C52629BC100050ED4B /* LaunchScreen.storyboard */ = {
@@ -428,11 +446,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
 				DEVELOPMENT_TEAM = 3LJ9H6BD56;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/CheatManager/Frameworks",
-					"$(PROJECT_DIR)/CheatManager/Frameworkse",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CheatManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -442,6 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = community.manticoreteam.CheatManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CheatManager/SwiftCheatKit-Bridging.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -457,11 +472,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
 				DEVELOPMENT_TEAM = 3LJ9H6BD56;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/CheatManager/Frameworks",
-					"$(PROJECT_DIR)/CheatManager/Frameworkse",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CheatManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -471,6 +482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.manticoreteam.CheatManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CheatManager/SwiftCheatKit-Bridging.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
