@@ -9,7 +9,7 @@ import Foundation
 
 class CMAPIEndpoints {
     // Root Address to CheatManager Backend API
-    let Root: String = "http://192.168.178.126:1337"
+    let Root: String = "https://cheatmanager-api-8ujov.ondigitalocean.app"
     
     // Endpoints
     let getFeaturedCheats:  String = "/store/featured"
@@ -30,6 +30,7 @@ class CMAPI {
         request.httpBody = jsonData
         if authRequired == true {
             if self.userDefaults.object(forKey: "token") == nil {
+                // Development key
                 self.userDefaults.setValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZpc2xhdGUiLCJpYXQiOjE2MTkxMDYyNDgsImV4cCI6MTY1MDY0MjI0OH0.tJDE2dKLPNftT6QBrc_wF5xlS6KQf2pT3NzMZUWOxZk", forKey: "token")
                 self.sendPostJSON(jsonBody: jsonBody, endpoint: endpoint, authRequired: authRequired, completion: completion)
             }else {
