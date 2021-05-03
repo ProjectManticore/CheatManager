@@ -19,13 +19,10 @@ extension View {
 struct CheatDetailView: View {
     let packageManager = PackageManager()
     let storeCheat: StoreCheat
-    // Ignore this variable. This is for development purposes only
-    @State var upvoted: Bool = false
-    @State var downvoted: Bool = false
 
     var body: some View {
         VStack(alignment: .leading) {
-            ZStack {
+            ZStack(alignment: .bottomLeading) {
                 // Banner Image
                 ZStack {
                     // Gamee Banner
@@ -35,7 +32,8 @@ struct CheatDetailView: View {
                     
                     Rectangle()
                         .foregroundColor(.clear)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.systemBackground), Color(UIColor.systemBackground), Color.clear.opacity(0.5)]), startPoint: .bottom, endPoint: .top))
+                        .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.systemBackground), Color(UIColor.systemBackground).opacity(0.0)]), startPoint: .bottom, endPoint: .top))
+                        .frame(maxHeight: .infinity)
                 }.frame(minWidth: 0, maxWidth: .infinity).frame(height: 240)
 
                 // Game Icon, Name, Author
@@ -53,7 +51,7 @@ struct CheatDetailView: View {
                         Text(storeCheat.author)
                             .font(.title2)
                             .fontWeight(.semibold)
-                            .foregroundColor(Color.gray).opacity(0.7)
+                            .foregroundColor(Color.primary).opacity(0.7)
                         
                         // Game Name
                         Text(storeCheat.game.name)
@@ -73,55 +71,13 @@ struct CheatDetailView: View {
                 }
             }
             
-            List {
-                HStack {
-                    Text("Installations")
-                    Spacer()
-                    Text("\(storeCheat.installations)")
-                }.padding(.leading)
+            ScrollView(.vertical, showsIndicators: false) {
+                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+                    .font(.body)
+                    .padding()
                 
-                HStack {
-                    Text("Upvotes")
-                    Spacer()
-                    Text("\(storeCheat.upvotes)")
-                }.padding(.leading)
-                
-                HStack {
-                    Text("Author")
-                    Spacer()
-                    Text("\(storeCheat.author)")
-                }.padding(.leading)
-                
-                HStack {
-                    Text("Version")
-                    Spacer()
-                    Text("\(storeCheat.version)")
-                }.padding(.leading)
-                
-                // Upvote/Downvote buttons
-                // These will not work until moved out of the list.
-                HStack {
-                    VStack {
-                        Image(systemName: "hand.thumbsup.fill").frame(height: 10)
-                            .foregroundColor(self.upvoted == true ? .accentColor : .primary)
-                            .onTapGesture {
-                                self.downvoted = false
-                                self.upvoted = true
-                            }
-                    }.padding().padding(.leading, 30)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        Image(systemName: "hand.thumbsdown.fill").frame(height: 10)
-                            .foregroundColor(self.downvoted == true ? .accentColor : .primary)
-                            .onTapGesture {
-                                self.downvoted = true
-                                self.upvoted = false
-                            }
-                    }.padding().padding(.trailing, 30)
-                }
-            }.disabled(true)
+                CheatInformationBlock(cheat: storeCheat).padding(.horizontal).padding(.bottom, 50)
+            }
             
             Spacer()
 
@@ -130,25 +86,25 @@ struct CheatDetailView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(.accentColor)
-                        .padding(.leading, 20).padding(.trailing, 20).padding(.bottom, -20)
-                        .frame(height: 80)
+                        .padding(.horizontal, 20)
+                        .frame(height: 65)
                     
                     if packageManager.isCheatInstalled(storeCheat.id) == true {
                         Text("Remove")
                             .fontWeight(.semibold)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.white)
                             .fontWeight(.semibold)
                             .font(.title)
                     }else if packageManager.installedCheatVersion(storeCheat.id) < storeCheat.version {
                         Text("Update")
                             .fontWeight(.semibold)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.white)
                             .fontWeight(.semibold)
                             .font(.title)
                     }else {
                         Text("Install")
                             .fontWeight(.semibold)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.white)
                             .fontWeight(.semibold)
                             .font(.title)
                     }
