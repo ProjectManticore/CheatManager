@@ -17,7 +17,6 @@ extension View {
 }
 
 struct CheatDetailView: View {
-    let packageManager = PackageManager()
     let storeCheat: StoreCheat
 
     var body: some View {
@@ -89,34 +88,33 @@ struct CheatDetailView: View {
                         .padding(.horizontal, 20)
                         .frame(height: 65)
                     
-                    if packageManager.isCheatInstalled(storeCheat.id) == true {
-                        Text("Remove")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .font(.title)
-                    }else if packageManager.installedCheatVersion(storeCheat.id) < storeCheat.version {
-                        Text("Update")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .font(.title)
-                    }else {
-                        Text("Install")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .font(.title)
-                    }
+//                    if packageManager.isCheatInstalled(storeCheat.id) == true {
+//                        Text("Remove")
+//                            .fontWeight(.semibold)
+//                            .foregroundColor(.white)
+//                            .fontWeight(.semibold)
+//                            .font(.title)
+//                    }else if packageManager.installedCheatVersion(storeCheat.id) < storeCheat.version {
+//                        Text("Update")
+//                            .fontWeight(.semibold)
+//                            .foregroundColor(.white)
+//                            .fontWeight(.semibold)
+//                            .font(.title)
+//                    }
+                    
+                    Text("Install")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .fontWeight(.semibold)
+                        .font(.title)
 
                 }.onTapGesture {
-                    if packageManager.isCheatInstalled(storeCheat.id) == true {
-                        print("Modify tapped")
-                    }else if packageManager.installedCheatVersion(storeCheat.id) < storeCheat.version {
-                        print("Update tapped")
-                    }else {
-                        print("Install tapped")
-                    }
+//                    if packageManager.isCheatInstalled(storeCheat.id) == true {
+//                        print("Modify tapped")
+//                    }else if packageManager.installedCheatVersion(storeCheat.id) < storeCheat.version {
+//                        print("Update tapped")
+//                    }else {
+                    print("Install tapped")
                 }
             }
             
