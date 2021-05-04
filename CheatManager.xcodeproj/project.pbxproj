@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		232012C12641708900329847 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232012C02641708900329847 /* SettingsView.swift */; };
 		23FA54B02640A9B4007AA460 /* CheatInformationBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FA54AF2640A9B4007AA460 /* CheatInformationBlock.swift */; };
 		23FA54B22640A9BC007AA460 /* FeaturedCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FA54B12640A9BC007AA460 /* FeaturedCarousel.swift */; };
 		23FA54B42640A9C1007AA460 /* MarketCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FA54B32640A9C1007AA460 /* MarketCarousel.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		232012C02641708900329847 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		23FA54AF2640A9B4007AA460 /* CheatInformationBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheatInformationBlock.swift; sourceTree = "<group>"; };
 		23FA54B12640A9BC007AA460 /* FeaturedCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedCarousel.swift; sourceTree = "<group>"; };
 		23FA54B32640A9C1007AA460 /* MarketCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketCarousel.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				81E1FC26262DFAC000467ECC /* Views */,
 				322BA0BE2629BC0C0050ED4B /* ContentView.swift */,
+				232012C02641708900329847 /* SettingsView.swift */,
 				322BA0ED2629BC440050ED4B /* MainTabView.swift */,
 				32B40EDE2629BD9000C73004 /* HomeView.swift */,
 				81E1FC27262DFAD400467ECC /* PackagesView.swift */,
@@ -300,6 +303,7 @@
 				8186BB732631C2A900BB3A00 /* NetworkModels.swift in Sources */,
 				322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */,
 				81521BAC262F283F00B1DFAB /* CheatDetailView.swift in Sources */,
+				232012C12641708900329847 /* SettingsView.swift in Sources */,
 				32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */,
 				81E1FC34262DFD0600467ECC /* CheatModels.swift in Sources */,
 				831D98A9262E11B800946656 /* MarketRowView.swift in Sources */,
@@ -465,7 +469,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = community.manticoreteam.CheatManager;
+				PRODUCT_BUNDLE_IDENTIFIER = community.manticore.CheatManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CheatManager/SwiftCheatKit-Bridging.h";
@@ -491,7 +495,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manticoreteam.CheatManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manticore.CheatManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CheatManager/SwiftCheatKit-Bridging.h";

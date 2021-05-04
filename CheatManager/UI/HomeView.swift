@@ -88,7 +88,7 @@ struct HomeView: View {
 	
     var body: some View {
         NavigationView {
-            ScrollView(.vertical, showsIndicators: true) {
+            ScrollView(.vertical, showsIndicators: false) {
                 Divider().padding(.horizontal)
                 
                 FeaturedCarousel(cheats: featuredCheats)//.onAppear {

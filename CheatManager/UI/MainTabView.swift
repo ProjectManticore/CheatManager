@@ -38,6 +38,11 @@ struct MainTabView: View {
                     .tabItem {
                         Label("Packages", systemImage: "shippingbox.fill")
                     }
+                
+                SettingsView()
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
             }
         }
     }
