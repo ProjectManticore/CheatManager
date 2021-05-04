@@ -100,13 +100,13 @@ struct CheatDetailView: View {
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
                             .font(.title)
+                    }else if packageManager.isCheatInstalled(storeCheat.id) == false {
+                        Text("Install")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .fontWeight(.semibold)
+                            .font(.title)
                     }
-                    
-                    Text("Install")
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .fontWeight(.semibold)
-                        .font(.title)
 
                 }.onTapGesture {
                     if packageManager.isCheatInstalled(storeCheat.id) == true {
