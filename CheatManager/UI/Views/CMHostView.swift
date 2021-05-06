@@ -11,6 +11,7 @@ struct CMHostView<Content : View> : View {
     var content : Content
     let title: String
     var showsAccountImage: Bool
+    @State private var showAccountOverlay: Bool = false
     
     init(_ title: String, showsAccountImage: Bool = true, @ViewBuilder content: () -> Content) {
         self.content = content()
@@ -22,19 +23,24 @@ struct CMHostView<Content : View> : View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 content
-            }.navigationTitle(self.title)
+            }
+            .navigationTitle(self.title)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if (showsAccountImage) {
-                        Image("ProfileImage")
+                        Image(systemName: "person.crop.circle")
                             .resizable()
                             .frame(width: 40, height: 40)
                             .cornerRadius(20)
                             .padding(.top, -8)
+                            .gesture(TapGesture(count: 1).onEnded { _ in self.showAccountOverlay.toggle() })
                     }
                 }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
-        
+        .sheet(isPresented: self.$showAccountOverlay) {
+            AccountDetailView()
+        }
     }
+    
 }
