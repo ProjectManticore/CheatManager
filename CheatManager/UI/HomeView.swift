@@ -85,7 +85,8 @@ struct HomeView: View {
             )
         ),
     ]
-	
+	let dataManager = DataManager()
+        
     var body: some View {
         CMHostView("Market") {
             Divider().padding(.horizontal)
@@ -109,6 +110,8 @@ struct HomeView: View {
             MarketCarousel(title: "Adventure", cheats: arcadeCheats)
             
             Divider().padding(.horizontal)
+        }.onAppear {
+            self.dataManager.receiveFeaturedCheats()
         }
     }
 }

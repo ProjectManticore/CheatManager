@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		232012C12641708900329847 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232012C02641708900329847 /* SettingsView.swift */; };
 		238A97F22643F97E00D65927 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97F12643F97E00D65927 /* AccountDetailView.swift */; };
+		238A97F52643FCB900D65927 /* CheatManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 238A97F32643FCB900D65927 /* CheatManager.xcdatamodeld */; };
+		238A97F9264403A200D65927 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97F8264403A200D65927 /* DataManager.swift */; };
+		238A97FC26440AE400D65927 /* Cheat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97FB26440AE400D65927 /* Cheat.swift */; };
+		238A97FE26440D6800D65927 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97FD26440D6800D65927 /* CoreDataStack.swift */; };
+		238A980026440DBC00D65927 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97FF26440DBC00D65927 /* DataProvider.swift */; };
 		23FA54B02640A9B4007AA460 /* CheatInformationBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FA54AF2640A9B4007AA460 /* CheatInformationBlock.swift */; };
 		23FA54B22640A9BC007AA460 /* FeaturedCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FA54B12640A9BC007AA460 /* FeaturedCarousel.swift */; };
 		23FA54B42640A9C1007AA460 /* MarketCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FA54B32640A9C1007AA460 /* MarketCarousel.swift */; };
@@ -69,6 +74,11 @@
 /* Begin PBXFileReference section */
 		232012C02641708900329847 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		238A97F12643F97E00D65927 /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
+		238A97F42643FCB900D65927 /* CheatManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CheatManager.xcdatamodel; sourceTree = "<group>"; };
+		238A97F8264403A200D65927 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		238A97FB26440AE400D65927 /* Cheat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cheat.swift; sourceTree = "<group>"; };
+		238A97FD26440D6800D65927 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		238A97FF26440DBC00D65927 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		23FA54AF2640A9B4007AA460 /* CheatInformationBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheatInformationBlock.swift; sourceTree = "<group>"; };
 		23FA54B12640A9BC007AA460 /* FeaturedCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedCarousel.swift; sourceTree = "<group>"; };
 		23FA54B32640A9C1007AA460 /* MarketCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketCarousel.swift; sourceTree = "<group>"; };
@@ -110,12 +120,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		238A97FA26440AD800D65927 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				238A97FB26440AE400D65927 /* Cheat.swift */,
+				238A97FD26440D6800D65927 /* CoreDataStack.swift */,
+				238A97FF26440DBC00D65927 /* DataProvider.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		322BA0AE2629BC0C0050ED4B = {
 			isa = PBXGroup;
 			children = (
+				322BA0B92629BC0C0050ED4B /* CheatManager */,
 				8186BB572631B35600BB3A00 /* CheatKit.xcodeproj */,
 				81EBA85A2631774F00C1F4FF /* Makefile */,
-				322BA0B92629BC0C0050ED4B /* CheatManager */,
 				322BA0B82629BC0C0050ED4B /* Products */,
 				81EBA87026318F8300C1F4FF /* Frameworks */,
 			);
@@ -135,14 +155,15 @@
 				81E1FC32262DFCEB00467ECC /* Models */,
 				322BA0F22629BC7D0050ED4B /* UI */,
 				32B40EEF2629C1DB00C73004 /* Backend */,
-				322BA0C02629BC100050ED4B /* Assets.xcassets */,
-				322BA0F62629BCBF0050ED4B /* CheatManager.entitlements */,
 				322BA0BA2629BC0C0050ED4B /* AppDelegate.swift */,
 				322BA0BC2629BC0C0050ED4B /* SceneDelegate.swift */,
 				322BA0C52629BC100050ED4B /* LaunchScreen.storyboard */,
+				238A97F32643FCB900D65927 /* CheatManager.xcdatamodeld */,
 				322BA0C82629BC100050ED4B /* Info.plist */,
-				322BA0C22629BC100050ED4B /* Preview Content */,
+				322BA0F62629BCBF0050ED4B /* CheatManager.entitlements */,
 				819805FC26347CF000C52941 /* SwiftCheatKit-Bridging.h */,
+				322BA0C02629BC100050ED4B /* Assets.xcassets */,
+				322BA0C22629BC100050ED4B /* Preview Content */,
 			);
 			path = CheatManager;
 			sourceTree = "<group>";
@@ -174,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				8111CDD82630702200D39E56 /* APIHandler.swift */,
+				238A97F8264403A200D65927 /* DataManager.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -204,6 +226,7 @@
 		81E1FC32262DFCEB00467ECC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				238A97FA26440AD800D65927 /* CoreData */,
 				81E1FC33262DFD0600467ECC /* CheatModels.swift */,
 				8186BB722631C2A900BB3A00 /* NetworkModels.swift */,
 			);
@@ -312,6 +335,7 @@
 				81E1FC28262DFAD400467ECC /* PackagesView.swift in Sources */,
 				23FA54B42640A9C1007AA460 /* MarketCarousel.swift in Sources */,
 				322BA0BB2629BC0C0050ED4B /* AppDelegate.swift in Sources */,
+				238A97F52643FCB900D65927 /* CheatManager.xcdatamodeld in Sources */,
 				26DC751E2641F64D00F5B904 /* AccountView.swift in Sources */,
 				8186BB732631C2A900BB3A00 /* NetworkModels.swift in Sources */,
 				322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */,
@@ -320,12 +344,16 @@
 				32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */,
 				26DC75202641F86500F5B904 /* SettingSwitch.swift in Sources */,
 				238A97F22643F97E00D65927 /* AccountDetailView.swift in Sources */,
+				238A97FE26440D6800D65927 /* CoreDataStack.swift in Sources */,
 				81E1FC34262DFD0600467ECC /* CheatModels.swift in Sources */,
+				238A980026440DBC00D65927 /* DataProvider.swift in Sources */,
 				831D98A9262E11B800946656 /* MarketRowView.swift in Sources */,
 				23FA54B22640A9BC007AA460 /* FeaturedCarousel.swift in Sources */,
 				26DC751C2641F2B900F5B904 /* CMHostView.swift in Sources */,
+				238A97F9264403A200D65927 /* DataManager.swift in Sources */,
 				8111CDD92630702200D39E56 /* APIHandler.swift in Sources */,
 				322BA0BF2629BC0C0050ED4B /* ContentView.swift in Sources */,
+				238A97FC26440AE400D65927 /* Cheat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +570,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		238A97F32643FCB900D65927 /* CheatManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				238A97F42643FCB900D65927 /* CheatManager.xcdatamodel */,
+			);
+			currentVersion = 238A97F42643FCB900D65927 /* CheatManager.xcdatamodel */;
+			path = CheatManager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 322BA0AF2629BC0C0050ED4B /* Project object */;
 }
