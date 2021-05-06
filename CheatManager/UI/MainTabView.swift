@@ -20,6 +20,9 @@ struct MainTabView: View {
                     NavigationLink(destination: PackagesView(), tag: 1, selection: self.$id) {
                         Label("Packages", systemImage: "shippingbox.fill")
                     }
+                    NavigationLink(destination: SettingsView(), tag: 2, selection: self.$id) {
+                        Label("Settings", systemImage: "gear")
+                    }
                 }
                 .listStyle(SidebarListStyle())
                 .navigationBarTitle(Text("CheatManager"))

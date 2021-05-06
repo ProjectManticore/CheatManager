@@ -10,14 +10,13 @@ import SwiftUI
 struct SettingsView: View {
     @State private var debugMode = true
     var body: some View {
-        NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                Divider().padding(.horizontal)
-                List {
-                    Toggle("Debugmode", isOn: $debugMode)
-                        .toggleStyle(SwitchToggleStyle(tint: .accentColor))
-                }
-            }.navigationTitle("Settings")
+        CMHostView("Settings") {
+            Divider().padding(.horizontal)
+            HStack {
+//                Toggle("Debugmode", isOn: $debugMode)
+//                    .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+                SettingSwitch(title: "Debug Mode", on: self.$debugMode)
+            }
         }
     }
 }

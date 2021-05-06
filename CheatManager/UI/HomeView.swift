@@ -87,34 +87,29 @@ struct HomeView: View {
     ]
 	
     var body: some View {
-        NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                Divider().padding(.horizontal)
-                
-                FeaturedCarousel(cheats: featuredCheats)//.onAppear {
+        CMHostView("Market") {
+            Divider().padding(.horizontal)
+            
+            FeaturedCarousel(cheats: featuredCheats)//.onAppear {
 //                    CMAPI().getFeaturedCheats { (featuredCheats) in
 //                        self.featuredCheats = featuredCheats.data
 //                    }
 //                }
-                
-                Divider().padding(.horizontal)
-                
-                MarketCarousel(title: "Arcade Games", cheats: arcadeCheats)
-                
-                Divider().padding(.horizontal)
-                
-                MarketCarousel(title: "Classic Games", cheats: arcadeCheats)
-                
-                Divider().padding(.horizontal)
-                
-                MarketCarousel(title: "Adventure", cheats: arcadeCheats)
-                
-                Divider().padding(.horizontal)
-                
-            }
-			.navigationTitle(Text("Market"))
+            
+            Divider().padding(.horizontal)
+            
+            MarketCarousel(title: "Arcade Games", cheats: arcadeCheats)
+            
+            Divider().padding(.horizontal)
+            
+            MarketCarousel(title: "Classic Games", cheats: arcadeCheats)
+            
+            Divider().padding(.horizontal)
+            
+            MarketCarousel(title: "Adventure", cheats: arcadeCheats)
+            
+            Divider().padding(.horizontal)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

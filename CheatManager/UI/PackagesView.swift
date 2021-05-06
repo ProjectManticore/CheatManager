@@ -9,13 +9,9 @@ import SwiftUI
 
 struct PackagesView: View {
     var body: some View {
-		NavigationView {
-			List {
-				Text("Hello, World!")
-			}
-			.navigationTitle("Packages")
-		}
-		.navigationViewStyle(StackNavigationViewStyle())
+        CMHostView("Packages") {
+            Text("HELLO WORLD")
+        }
     }
 }
 
