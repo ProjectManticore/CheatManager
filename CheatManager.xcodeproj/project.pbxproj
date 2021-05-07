@@ -13,6 +13,7 @@
 		238A97F9264403A200D65927 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97F8264403A200D65927 /* DataManager.swift */; };
 		238A97FE26440D6800D65927 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97FD26440D6800D65927 /* CoreDataStack.swift */; };
 		238A980026440DBC00D65927 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97FF26440DBC00D65927 /* DataProvider.swift */; };
+		23BF42B826456B3900CBA6A6 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF42B726456B3900CBA6A6 /* SetupView.swift */; };
 		23F76DAC264520C00050C62D /* Cheat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F76DA8264520100050C62D /* Cheat+CoreDataClass.swift */; };
 		23F76DAD264520C20050C62D /* Cheat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F76DA9264520100050C62D /* Cheat+CoreDataProperties.swift */; };
 		23F76DAF264522D90050C62D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F76DAE264522D90050C62D /* Persistence.swift */; };
@@ -83,6 +84,7 @@
 		238A97F8264403A200D65927 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		238A97FD26440D6800D65927 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		238A97FF26440DBC00D65927 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		23BF42B726456B3900CBA6A6 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		23F76DA8264520100050C62D /* Cheat+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cheat+CoreDataClass.swift"; sourceTree = "<group>"; };
 		23F76DA9264520100050C62D /* Cheat+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cheat+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		23F76DAE264522D90050C62D /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				81E1FC26262DFAC000467ECC /* Views */,
 				322BA0BE2629BC0C0050ED4B /* ContentView.swift */,
 				232012C02641708900329847 /* SettingsView.swift */,
+				23BF42B726456B3900CBA6A6 /* SetupView.swift */,
 				322BA0ED2629BC440050ED4B /* MainTabView.swift */,
 				26C1B1C32644C1FD00E0292D /* SearchView.swift */,
 				32B40EDE2629BD9000C73004 /* HomeView.swift */,
@@ -373,6 +376,7 @@
 				238A97F9264403A200D65927 /* DataManager.swift in Sources */,
 				8111CDD92630702200D39E56 /* APIHandler.swift in Sources */,
 				23F76DAD264520C20050C62D /* Cheat+CoreDataProperties.swift in Sources */,
+				23BF42B826456B3900CBA6A6 /* SetupView.swift in Sources */,
 				322BA0BF2629BC0C0050ED4B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
