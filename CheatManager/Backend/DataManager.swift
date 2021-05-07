@@ -11,15 +11,10 @@ import Network
 import SwiftUI
 
 class DataManager {
-    @Environment(\.managedObjectContext) private var managedObjectContext
     let networkManager = CMAPI()
     let netwrokMonitor = NWPathMonitor()
     var isNetworkConnected: Bool = true
 
-    
-    // We need to find a workaround for this
-    private var featuredCheats: [StoreCheat] = []
-    
     init() {
         self.netwrokMonitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
@@ -31,16 +26,25 @@ class DataManager {
         self.netwrokMonitor.start(queue: queue)
     }
     
-    func receiveFeaturedCheats() -> [StoreCheat] {
+    func receiveFeaturedCheats(managedObjectContext: NSManagedObjectContext, completion: @escaping ([StoreCheat]) -> ()) {
+        var ret_arr: [StoreCheat] = []
         if self.isNetworkConnected == true {
             // Fetch data from the API using the CMAPI
-            print("Network connected")
-            CMAPI().getFeaturedCheats { (featuredCheats) in self.featuredCheats = featuredCheats.data }
+            CMAPI().getFeaturedCheats(completion: { (featuredCheats) in
+                ret_arr = featuredCheats.data
+                completion(ret_arr)
+            })
         } else if self.isNetworkConnected == false {
-            // Fetch the data from CoreData
-            print("No network connection")
+            // Fetch the data from local CoreData Storage
+            do {
+                let res = try managedObjectContext.fetch(Featured.fetchRequest()) as! [Featured]
+                for cheat in res {
+                    ret_arr.append(StoreCheat(version: cheat.version, upvotes: cheat.upvotes, downvotes: cheat.downvotes, installations: cheat.installations, createdAt: cheat.createdAt, id: cheat.id, name: cheat.name, author: cheat.author, game: StoreGame(id: cheat.game_id, version: cheat.game_version, name: cheat.game_name, bundleID: cheat.game_bundleid)))
+                }
+                completion(ret_arr)
+            } catch {
+                print(error)
+            }
         }
-        
-        return self.featuredCheats
     }
 }

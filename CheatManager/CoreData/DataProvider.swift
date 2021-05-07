@@ -21,9 +21,11 @@ class DataProvider {
         self.networkAPI = api
     }
     
-    func fetchFilms(completion: @escaping(Error?) -> Void) {
+    func fetchFeatured(completion: @escaping(Error?) -> Void) {
+        print("[CoreData] Trying to fetch featured Cheats...")
         networkAPI.getFeaturedCheats(completion: { FeaturedCheatsResponse in
             let featuredCheats = FeaturedCheatsResponse.data
+            print("[CoreData] Got a total of \(featuredCheats.count) Cheats...")
             let taskContext = self.persistentContainer.newBackgroundContext()
             taskContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             taskContext.undoManager = nil
@@ -44,20 +46,20 @@ class DataProvider {
                     NSManagedObjectContext.mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: deletedObjectIDs], into: [self.persistentContainer.viewContext])
                 }
             } catch {
-                print("Error: \(error)\nCould not batch delete existing records.")
+                print("[CoreData] Error: \(error)\nCould not batch delete existing records.")
                 return
             }
             
             for featuredCheat in featuredCheats {
-                guard let cheat = NSEntityDescription.insertNewObject(forEntityName: "Featured", into: taskContext) as? Cheat else {
-                    print("Error: Failed to create a new cheat object!")
+                guard let cheat = NSEntityDescription.insertNewObject(forEntityName: "Cheat", into: taskContext) as? Cheat else {
+                    print("[CoreData] Error: Failed to create a new cheat object!")
                     return
                 }
                 
                 do {
                     try cheat.update(with: featuredCheat)
                 } catch {
-                    print("Error: \(error)\nThe cheat object will be deleted.")
+                    print("[CoreData] Error: \(error)\nThe cheat object will be deleted.")
                     taskContext.delete(cheat)
                 }
             }
@@ -66,7 +68,7 @@ class DataProvider {
                 do {
                     try taskContext.save()
                 } catch {
-                    print("Error: \(error)\nCould not save Core Data context.")
+                    print("[CoreData] Error: \(error)\nCould not save Core Data context.")
                 }
                 taskContext.reset() // Reset the context to clean up the cache and low the memory footprint.
             }

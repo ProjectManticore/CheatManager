@@ -9,10 +9,23 @@
         <attribute name="installations" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="upvotes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="v" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="version" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="Featured" representedClassName=".Featured" syncable="YES" codeGenerationType="class"/>
+    <entity name="Featured" representedClassName=".Featured" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="downvotes" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="game_bundleid" optional="YES" attributeType="String"/>
+        <attribute name="game_category" optional="YES" attributeType="String"/>
+        <attribute name="game_id" optional="YES" attributeType="String"/>
+        <attribute name="game_name" optional="YES" attributeType="String"/>
+        <attribute name="game_version" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="installations" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="upvotes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="version" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="Game" representedClassName=".Game" syncable="YES" codeGenerationType="class">
         <attribute name="banner" optional="YES" attributeType="String" defaultValueString="defaultBanner"/>
         <attribute name="bundleid" optional="YES" attributeType="String"/>
@@ -27,9 +40,9 @@
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Featured" positionX="-63" positionY="-18" width="128" height="29"/>
-        <element name="Cheat" positionX="-54" positionY="-9" width="128" height="193"/>
-        <element name="User" positionX="-27" positionY="18" width="128" height="74"/>
+        <element name="Cheat" positionX="-54" positionY="-9" width="128" height="178"/>
+        <element name="Featured" positionX="-63" positionY="-18" width="128" height="28"/>
         <element name="Game" positionX="0" positionY="99" width="128" height="119"/>
+        <element name="User" positionX="-27" positionY="18" width="128" height="74"/>
     </elements>
 </model>
