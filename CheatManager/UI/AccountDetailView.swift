@@ -16,33 +16,38 @@ struct AccountDetailView: View {
             VStack {
                 ScrollView(.vertical, showsIndicators: false) {
                     Divider().padding(.horizontal)
-                    ZStack(alignment: .bottom) {
-                        Image("ProfileImage")
-                            .resizable()
-                            .frame(width: 100, height: 100)
-                            .cornerRadius(50)
-                        ZStack(alignment: .center) {
-                            RoundedRectangle(cornerRadius: 0)
-                                .frame(width: 100, height: 20)
-                                .foregroundColor(.black)
-                            Button(action: {
-                                print("change picture")
-                            }) {
-                                Text("EDIT")
-                                    .font(.system(size: 10))
-                                    .foregroundColor(.white)
+                    HStack {
+                        ZStack(alignment: .bottom) {
+                            Image("ProfileImage")
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .cornerRadius(50)
+                            ZStack(alignment: .center) {
+                                RoundedRectangle(cornerRadius: 0)
+                                    .frame(width: 100, height: 20)
+                                    .foregroundColor(.black)
+                                Button(action: {
+                                    print("change picture")
+                                }) {
+                                    Text("EDIT")
+                                        .font(.system(size: 10))
+                                        .foregroundColor(.white)
+                                }
                             }
                         }
-                    }.clipShape(Circle())
-        
-                    Text("halliehax")
-                        .font(.title)
-                        .bold()
-                    Text("Created on 5/6/21")
-                        .font(.subheadline)
+                        .clipShape(Circle())
+                        .padding(.leading, 20)
+                        VStack(alignment: .leading) {
+                            Text("halliehax")
+                                .font(.title)
+                                .bold()
+                            Text("Created on 5/6/21")
+                                .font(.subheadline)
+                        }
+                        Spacer()
+                    }
         
                     Divider().padding(.horizontal)
-        
                     HStack {
                         Text("Email:")
                             .font(.headline)
@@ -69,7 +74,7 @@ struct AccountDetailView: View {
                 }
 
                 Divider().padding(.horizontal)
-            }.navigationTitle("CheatManager ID")
+            }.navigationTitle("Account")
             .alert(isPresented: self.$showSignoutConfirmation) {
                 Alert(
                     title: Text("Are you sure?"),

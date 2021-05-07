@@ -34,7 +34,7 @@ class DataProvider {
         })
     }
     
-    private func syncFeaturedCheats(featuredCheats: [StoreCheat], taskContext: NSManagedObjectContext) -> Bool {
+    func syncFeaturedCheats(featuredCheats: [StoreCheat], taskContext: NSManagedObjectContext) -> Bool {
         var successfull = false
         taskContext.performAndWait {
             let matchingCheatRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Featured")
@@ -51,7 +51,7 @@ class DataProvider {
             }
             
             for featuredCheat in featuredCheats {
-                guard let cheat = NSEntityDescription.insertNewObject(forEntityName: "Cheat", into: taskContext) as? Cheat else {
+                guard let cheat = NSEntityDescription.insertNewObject(forEntityName: "Featured", into: taskContext) as? Featured else {
                     print("[CoreData] Error: Failed to create a new cheat object!")
                     return
                 }

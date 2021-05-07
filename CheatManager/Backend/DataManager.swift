@@ -31,8 +31,8 @@ class DataManager {
         if self.isNetworkConnected == true {
             // Fetch data from the API using the CMAPI
             CMAPI().getFeaturedCheats(completion: { (featuredCheats) in
-                ret_arr = featuredCheats.data
-                completion(ret_arr)
+                print("Sync return status: \(DataProvider(persistentContainer: PersistenceController.shared.container, api: CMAPI()).syncFeaturedCheats(featuredCheats: featuredCheats.data, taskContext: managedObjectContext)) (length: \(featuredCheats.data.count)")
+                completion(featuredCheats.data)
             })
         } else if self.isNetworkConnected == false {
             // Fetch the data from local CoreData Storage
