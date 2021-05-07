@@ -17,9 +17,10 @@
 		23FA54B02640A9B4007AA460 /* CheatInformationBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FA54AF2640A9B4007AA460 /* CheatInformationBlock.swift */; };
 		23FA54B22640A9BC007AA460 /* FeaturedCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FA54B12640A9BC007AA460 /* FeaturedCarousel.swift */; };
 		23FA54B42640A9C1007AA460 /* MarketCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FA54B32640A9C1007AA460 /* MarketCarousel.swift */; };
+		26C1B1C42644C1FD00E0292D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C1B1C32644C1FD00E0292D /* SearchView.swift */; };
 		26DC751C2641F2B900F5B904 /* CMHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC751B2641F2B900F5B904 /* CMHostView.swift */; };
-		26DC751E2641F64D00F5B904 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC751D2641F64D00F5B904 /* AccountView.swift */; };
 		26DC75202641F86500F5B904 /* SettingSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC751F2641F86500F5B904 /* SettingSwitch.swift */; };
+		26FFF8762644D3ED0057E101 /* ExpandedMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FFF8752644D3ED0057E101 /* ExpandedMarketView.swift */; };
 		322BA0BB2629BC0C0050ED4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0BA2629BC0C0050ED4B /* AppDelegate.swift */; };
 		322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0BC2629BC0C0050ED4B /* SceneDelegate.swift */; };
 		322BA0BF2629BC0C0050ED4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BA0BE2629BC0C0050ED4B /* ContentView.swift */; };
@@ -82,9 +83,10 @@
 		23FA54AF2640A9B4007AA460 /* CheatInformationBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheatInformationBlock.swift; sourceTree = "<group>"; };
 		23FA54B12640A9BC007AA460 /* FeaturedCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedCarousel.swift; sourceTree = "<group>"; };
 		23FA54B32640A9C1007AA460 /* MarketCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketCarousel.swift; sourceTree = "<group>"; };
+		26C1B1C32644C1FD00E0292D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		26DC751B2641F2B900F5B904 /* CMHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMHostView.swift; sourceTree = "<group>"; };
-		26DC751D2641F64D00F5B904 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		26DC751F2641F86500F5B904 /* SettingSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSwitch.swift; sourceTree = "<group>"; };
+		26FFF8752644D3ED0057E101 /* ExpandedMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedMarketView.swift; sourceTree = "<group>"; };
 		322BA0B72629BC0C0050ED4B /* CheatManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheatManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		322BA0BA2629BC0C0050ED4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		322BA0BC2629BC0C0050ED4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,10 +185,12 @@
 				322BA0BE2629BC0C0050ED4B /* ContentView.swift */,
 				232012C02641708900329847 /* SettingsView.swift */,
 				322BA0ED2629BC440050ED4B /* MainTabView.swift */,
+				26C1B1C32644C1FD00E0292D /* SearchView.swift */,
 				32B40EDE2629BD9000C73004 /* HomeView.swift */,
 				81E1FC27262DFAD400467ECC /* PackagesView.swift */,
+				238A97F12643F97E00D65927 /* AccountDetailView.swift */,
 				81521BAB262F283F00B1DFAB /* CheatDetailView.swift */,
-				26DC751D2641F64D00F5B904 /* AccountView.swift */,
+				26FFF8752644D3ED0057E101 /* ExpandedMarketView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -218,7 +222,6 @@
 				23FA54B12640A9BC007AA460 /* FeaturedCarousel.swift */,
 				26DC751B2641F2B900F5B904 /* CMHostView.swift */,
 				26DC751F2641F86500F5B904 /* SettingSwitch.swift */,
-				238A97F12643F97E00D65927 /* AccountDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -336,12 +339,13 @@
 				23FA54B42640A9C1007AA460 /* MarketCarousel.swift in Sources */,
 				322BA0BB2629BC0C0050ED4B /* AppDelegate.swift in Sources */,
 				238A97F52643FCB900D65927 /* CheatManager.xcdatamodeld in Sources */,
-				26DC751E2641F64D00F5B904 /* AccountView.swift in Sources */,
 				8186BB732631C2A900BB3A00 /* NetworkModels.swift in Sources */,
 				322BA0BD2629BC0C0050ED4B /* SceneDelegate.swift in Sources */,
 				81521BAC262F283F00B1DFAB /* CheatDetailView.swift in Sources */,
 				232012C12641708900329847 /* SettingsView.swift in Sources */,
+				26FFF8762644D3ED0057E101 /* ExpandedMarketView.swift in Sources */,
 				32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */,
+				26C1B1C42644C1FD00E0292D /* SearchView.swift in Sources */,
 				26DC75202641F86500F5B904 /* SettingSwitch.swift in Sources */,
 				238A97F22643F97E00D65927 /* AccountDetailView.swift in Sources */,
 				238A97FE26440D6800D65927 /* CoreDataStack.swift in Sources */,
@@ -504,7 +508,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
-				DEVELOPMENT_TEAM = 3LJ9H6BD56;
+				DEVELOPMENT_TEAM = CB8FLNCGFG;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CheatManager/Info.plist;
@@ -513,7 +517,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manticore.CheatManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.halliehax.CheatManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CheatManager/SwiftCheatKit-Bridging.h";
@@ -530,7 +534,7 @@
 				CODE_SIGN_ENTITLEMENTS = CheatManager/CheatManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
-				DEVELOPMENT_TEAM = 3LJ9H6BD56;
+				DEVELOPMENT_TEAM = CB8FLNCGFG;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CheatManager/Info.plist;
@@ -539,7 +543,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manticore.CheatManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.halliehax.CheatManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CheatManager/SwiftCheatKit-Bridging.h";

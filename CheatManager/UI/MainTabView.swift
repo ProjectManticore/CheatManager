@@ -46,6 +46,11 @@ struct MainTabView: View {
                     .tabItem {
                         Label("Settings", systemImage: "gear")
                     }
+                
+                SearchView()
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
+                    }
             }
         }
     }
