@@ -21,7 +21,6 @@ struct CellButtonStyle: ButtonStyle{
             .background(Capsule().fill(Color(.tertiarySystemGroupedBackground)))
             .opacity(configuration.isPressed ? 0.3: 1)
     }
-    
 }
 
 struct MarketRowView: View {
@@ -37,7 +36,6 @@ struct MarketRowView: View {
                     .cornerRadius(10)
                     .scaledToFit()
                     .frame(height: 60)
-                
                 VStack(alignment: .leading) {
                     Text(storeCheat.game.name)
                         .fontWeight(.medium)

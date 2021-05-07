@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MarketCarousel: View {
     let title: String
-    let cheats: [StoreCheat]
+    var cheats: [StoreCheat]
     
     var rowCount: Int {
         if cheats.count > 6 {
@@ -33,7 +33,7 @@ struct MarketCarousel: View {
             }
             ScrollView (.horizontal, showsIndicators: false) {
                 HStack(alignment: .center, spacing: 12) {
-                    ForEach(0..<rowCount) { i in
+                    ForEach(0..<rowCount, id: \.self) { i in
                         VStack {
                             MarketRowView(storeCheat: self.cheats[i * 2])
                             if (cheats.count >= i * 2 + 2) {

@@ -10,8 +10,8 @@ import SwiftUI
 struct ExpandedMarketRowView: View {
     let storeCheat: StoreCheat
     let rank: Int
-    @Environment(\.sizeCategory) var sizeCategory
     @State private var showDetails: Bool = false
+    @Environment(\.sizeCategory) var sizeCategory
 
     var body: some View {
         ZStack {
@@ -21,14 +21,12 @@ struct ExpandedMarketRowView: View {
                     .cornerRadius(10)
                     .scaledToFit()
                     .frame(height: 60)
-                
                 VStack(alignment: .leading) {
                     Text("\(rank)")
                         .fontWeight(.medium)
                         .padding(.top)
                     Spacer()
                 }
-                
                 VStack(alignment: .leading) {
                     Text(storeCheat.game.name)
                         .fontWeight(.medium)
@@ -36,8 +34,6 @@ struct ExpandedMarketRowView: View {
                         .foregroundColor(.gray).opacity(0.8)
                 }
                 Spacer()
-                
-                // "GET" Button
                 Button(action: {
                     self.showDetails = true
                 }) {

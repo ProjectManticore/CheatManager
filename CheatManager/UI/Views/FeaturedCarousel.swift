@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FeaturedCarousel: View {
     let cheats: [StoreCheat]
-    
     @State var image: UIImage = UIImage(named: "defaultBanner")!
 
     var body: some View {

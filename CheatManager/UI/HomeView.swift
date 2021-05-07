@@ -13,71 +13,24 @@ struct HomeView: View {
 	@State var image: UIImage = UIImage(named: "defaultBanner")!
     @FetchRequest(entity: Cheat.entity(), sortDescriptors: []) var cheats: FetchedResults<Cheat>
     @Environment(\.managedObjectContext) var managedObjectContext
-    let dProvider = DataManager()
+    let dataManager = DataManager()
     @State var featuredCheats: [StoreCheat] =  []
-    
-    let arcadeCheats: [StoreCheat] = [
-        StoreCheat(
-            version: 10.1,
-            upvotes: 10,
-            downvotes: 10,
-            installations: 10,
-            createdAt: "0",
-            id: "28765",
-            name: "Subway",
-            author: "Rpwnage",
-            game: StoreGame(
-                id: "76857698u",
-                version: 1765,
-                name: "8fzh",
-                bundleID: "com.some.bundle"
-            )
-        ),
-        StoreCheat(
-            version: 10.1,
-            upvotes: 10,
-            downvotes: 10,
-            installations: 10,
-            createdAt: "0",
-            id: "28765",
-            name: "Subway",
-            author: "Rpwnage",
-            game: StoreGame(
-                id: "76857698u",
-                version: 1765,
-                name: "8fzh",
-                bundleID: "com.some.bundle"
-            )
-        ),
-        StoreCheat(
-            version: 10.1,
-            upvotes: 10,
-            downvotes: 10,
-            installations: 10,
-            createdAt: "0",
-            id: "28765",
-            name: "Subway",
-            author: "Rpwnage",
-            game: StoreGame(
-                id: "76857698u",
-                version: 1765,
-                name: "8fzh",
-                bundleID: "com.some.bundle"
-            )
-        ),
-    ]
-	let dataManager = DataManager()
+    @State var arcadeCheats: [StoreCheat] = []
         
     var body: some View {
         CMHostView("Market") {
             Divider().padding(.horizontal)
             FeaturedCarousel(cheats: featuredCheats).onAppear(perform: {
-                self.dProvider.receiveFeaturedCheats(managedObjectContext: self.managedObjectContext, completion: { cheats in
+                self.dataManager.receiveFeaturedCheats(managedObjectContext: self.managedObjectContext, completion: { cheats in
                     self.featuredCheats = cheats
                 })
             })
             Divider().padding(.horizontal)
-            MarketCarousel(title: "Arcade Games", cheats: arcadeCheats)
+            MarketCarousel(title: "Arcade Games", cheats: arcadeCheats).onAppear(perform: {
+                self.dataManager.receiveCategoryCheats(category: "arcade", managedObjectContext: self.managedObjectContext, completion: { cheats in
+                    self.arcadeCheats = cheats
+                })
+            })
             Divider().padding(.horizontal)
             MarketCarousel(title: "Classic Games", cheats: arcadeCheats)
             Divider().padding(.horizontal)

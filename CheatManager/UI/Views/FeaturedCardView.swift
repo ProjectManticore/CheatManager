@@ -12,7 +12,7 @@ struct FeaturedCardView: View {
     var storeCheat: StoreCheat
     @State var hovering: Bool = false
     @State private var showDetails: Bool = false
-
+    
     var body: some View {
         ZStack {
             Color.gray
@@ -44,9 +44,7 @@ struct FeaturedCardView: View {
         .cornerRadius(15)
         .shadow(radius: 5)
         .gesture(TapGesture(count: 1).onEnded { _ in self.showDetails = true })
-        .sheet(isPresented: self.$showDetails, onDismiss: {
-            self.showDetails = false
-        }) {
+        .sheet(isPresented: self.$showDetails, onDismiss: { self.showDetails = false }) {
             CheatDetailView(storeCheat: storeCheat, isSelfPresented: self.$showDetails)
         }
     }

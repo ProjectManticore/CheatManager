@@ -96,7 +96,7 @@ struct CheatDetailView: View {
                             // Cheat Author
                             Button(action: {
                                 // Show the authors profile
-                                print("Authors name tapped in CheatDetailView (Author: \(storeCheat.author)")
+                                print("Authors name tapped in CheatDetailView (Author: \(storeCheat.author))")
                                 self.isSelfPresented = false
                             }) {
                                 Text(storeCheat.author)

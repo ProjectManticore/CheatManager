@@ -48,4 +48,27 @@ class DataManager {
             }
         }
     }
+    
+    func receiveCategoryCheats(category: String, managedObjectContext: NSManagedObjectContext, completion: @escaping ([StoreCheat]) -> ()) {
+        var ret_arr: [StoreCheat] = []
+        if self.isNetworkConnected == true {
+            CMAPI().searchByCategory(Category: category, completion: { (responseCheats) in
+                if DataProvider(persistentContainer: PersistenceController.shared.container, api: CMAPI()).syncCheats(cheats: responseCheats.data, taskContext: managedObjectContext){
+                    completion(responseCheats.data)
+                } else {
+                    print("[Featured] Sync. failed")
+                }
+            })
+        } else if self.isNetworkConnected == false {
+            do {
+                let res = try managedObjectContext.fetch(Featured.fetchRequest()) as! [Featured]
+                for cheat in res {
+                    ret_arr.append(StoreCheat(version: cheat.version, upvotes: cheat.upvotes, downvotes: cheat.downvotes, installations: cheat.installations, createdAt: cheat.createdAt, id: cheat.id, name: cheat.name, author: cheat.author, game: StoreGame(id: cheat.game_id, version: cheat.game_version, name: cheat.game_name, bundleID: cheat.game_bundleid)))
+                }
+                completion(ret_arr)
+            } catch {
+                print(error)
+            }
+        }
+    }
 }

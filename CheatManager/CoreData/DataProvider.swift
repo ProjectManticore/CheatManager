@@ -34,6 +34,49 @@ class DataProvider {
         })
     }
     
+    func syncCheats(cheats: [StoreCheat], taskContext: NSManagedObjectContext) -> Bool {
+        var successfull = false
+        taskContext.performAndWait {
+            let matchingCheatRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cheat")
+            let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: matchingCheatRequest)
+            batchDeleteRequest.resultType = .resultTypeObjectIDs
+            do {
+                let batchDeleteResult = try taskContext.execute(batchDeleteRequest) as? NSBatchDeleteResult
+                if let deletedObjectIDs = batchDeleteResult?.result as? [NSManagedObjectID] {
+                    NSManagedObjectContext.mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: deletedObjectIDs], into: [self.persistentContainer.viewContext])
+                }
+            } catch {
+                print("[CoreData] Error: \(error)\nCould not batch delete existing records.")
+                return
+            }
+            
+            for responseCheat in cheats {
+                guard let cheat = NSEntityDescription.insertNewObject(forEntityName: "Cheat", into: taskContext) as? Cheat else {
+                    print("[CoreData] Error: Failed to create a new Cheat object!")
+                    return
+                }
+                
+                do {
+                    try cheat.update(with: responseCheat)
+                } catch {
+                    print("[CoreData] Error: \(error)\nThe cheat object will be deleted.")
+                    taskContext.delete(cheat)
+                }
+            }
+            
+            if taskContext.hasChanges {
+                do {
+                    try taskContext.save()
+                } catch {
+                    print("[CoreData] Error: \(error)\nCould not save Core Data context.")
+                }
+                taskContext.reset() // Reset the context to clean up the cache and low the memory footprint.
+            }
+            successfull = true
+        }
+        return successfull
+    }
+    
     func syncFeaturedCheats(featuredCheats: [StoreCheat], taskContext: NSManagedObjectContext) -> Bool {
         var successfull = false
         taskContext.performAndWait {
@@ -52,7 +95,7 @@ class DataProvider {
             
             for featuredCheat in featuredCheats {
                 guard let cheat = NSEntityDescription.insertNewObject(forEntityName: "Featured", into: taskContext) as? Featured else {
-                    print("[CoreData] Error: Failed to create a new cheat object!")
+                    print("[CoreData] Error: Failed to create a new Featured object!")
                     return
                 }
                 

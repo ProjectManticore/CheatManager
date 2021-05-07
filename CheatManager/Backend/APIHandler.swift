@@ -16,6 +16,7 @@ class CMAPIEndpoints {
     let upvoteCheat:        String = "/upvote/"             // params: id
     let downvoteCheat:      String = "/downvote/"           // params: id
     let searchByBundleID:   String = "/search/bundle/"      // params: bundle_id
+    let searchByCategory:   String = "/search/category/"    // params: category
     let searchByAuthor:     String = "/search/author/"      // params: author
 }
 
@@ -79,7 +80,21 @@ class CMAPI {
     
     func searchByBundleID(BundleID: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
         guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByBundleID + BundleID)) else { return }
-        print(url.absoluteString)
+        URLSession.shared.dataTask(with: url){ (data, resp, err) in
+            if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
+                // Server is down
+            }
+            
+            let searchResultCheats = try! JSONDecoder().decode(FeaturedCheatsResponse.self, from: data!)
+            DispatchQueue.main.async {
+                completion(searchResultCheats)
+            }
+        }
+        .resume()
+    }
+    
+    func searchByCategory(Category: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
+        guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByCategory + Category)) else { return }
         URLSession.shared.dataTask(with: url){ (data, resp, err) in
             if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
                 // Server is down
@@ -95,7 +110,6 @@ class CMAPI {
     
     func searchByAuthor(Author: String, completion: @escaping (Any) -> ()) {
         guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByAuthor + Author)) else { return }
-        print(url.absoluteString)
         URLSession.shared.dataTask(with: url){ (data, resp, err) in
             if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
                 // Server is down
