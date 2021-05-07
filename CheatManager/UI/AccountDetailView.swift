@@ -6,10 +6,54 @@
 //
 
 import SwiftUI
+import UIKit
+
+struct ImagePicker: UIViewControllerRepresentable {
+    var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    @Binding var selectedImage: UIImage
+    let callback: (UIImage) -> Void
+    @Environment(\.presentationMode) var presentationMode
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = sourceType
+        imagePicker.delegate = context.coordinator
+        return imagePicker
+    }
+ 
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+ 
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self, callback)
+    }
+
+    final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        var parent: ImagePicker
+        let callback: (UIImage) -> Void
+        
+        init(_ parent: ImagePicker, _ callback: @escaping (UIImage) -> Void) {
+            self.parent = parent
+            self.callback = callback
+        }
+     
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                parent.selectedImage = image
+                callback(image)
+            }
+            
+            parent.presentationMode.wrappedValue.dismiss()
+        }
+    }
+}
 
 struct AccountDetailView: View {
-    
     @State var showSignoutConfirmation: Bool = false
+    @State var showProfilePicturePicker: Bool = false
+    @State var profilePicture = UIImage(named: "ProfileImage")!
     
     var body: some View {
         NavigationView {
@@ -18,7 +62,7 @@ struct AccountDetailView: View {
                     Divider().padding(.horizontal)
                     HStack {
                         ZStack(alignment: .bottom) {
-                            Image("ProfileImage")
+                            Image(uiImage: profilePicture)
                                 .resizable()
                                 .frame(width: 100, height: 100)
                                 .cornerRadius(50)
@@ -27,7 +71,7 @@ struct AccountDetailView: View {
                                     .frame(width: 100, height: 20)
                                     .foregroundColor(.black)
                                 Button(action: {
-                                    print("change picture")
+                                    self.showProfilePicturePicker = true
                                 }) {
                                     Text("EDIT")
                                         .font(.system(size: 10))
@@ -86,6 +130,12 @@ struct AccountDetailView: View {
                 )
             }
         }.navigationViewStyle(StackNavigationViewStyle())
+        .sheet(isPresented: self.$showProfilePicturePicker) {
+            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$profilePicture, callback: { selectedImage in
+                print("[ACCOUNT] Chosen image size: \(selectedImage.size)")
+                // Change image via CMAPI if image is valid/small
+            })
+        }
     }
 }
 
