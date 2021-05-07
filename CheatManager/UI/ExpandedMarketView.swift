@@ -19,11 +19,7 @@ struct ExpandedMarketView: View {
                 VStack {
                     ForEach(0..<allCheats.count) { i in
                         HStack(alignment: .top) {
-                            Text("\(i + 1)")
-                                .font(.title)
-                                .bold()
-                                .padding()
-                            MarketRowView(storeCheat: self.allCheats[i])
+                            ExpandedMarketRowView(storeCheat: self.allCheats[i], rank: (i + 1))
                         }
                         Divider().padding(.horizontal)
                     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2300A7C8264592B200DC554A /* ExpandedMarketRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2300A7C7264592B200DC554A /* ExpandedMarketRowView.swift */; };
 		232012C12641708900329847 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232012C02641708900329847 /* SettingsView.swift */; };
 		238A97F22643F97E00D65927 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97F12643F97E00D65927 /* AccountDetailView.swift */; };
 		238A97F52643FCB900D65927 /* CheatManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 238A97F32643FCB900D65927 /* CheatManager.xcdatamodeld */; };
@@ -77,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2300A7C7264592B200DC554A /* ExpandedMarketRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedMarketRowView.swift; sourceTree = "<group>"; };
 		232012C02641708900329847 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		238A97F12643F97E00D65927 /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
 		238A97F42643FCB900D65927 /* CheatManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CheatManager.xcdatamodel; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				833B0B43262C8A53009F91AE /* FeaturedCardView.swift */,
 				23FA54AF2640A9B4007AA460 /* CheatInformationBlock.swift */,
 				831D98A8262E11B800946656 /* MarketRowView.swift */,
+				2300A7C7264592B200DC554A /* ExpandedMarketRowView.swift */,
 				23FA54B32640A9C1007AA460 /* MarketCarousel.swift */,
 				23FA54B12640A9BC007AA460 /* FeaturedCarousel.swift */,
 				26DC751B2641F2B900F5B904 /* CMHostView.swift */,
@@ -350,6 +353,7 @@
 				81E1FC28262DFAD400467ECC /* PackagesView.swift in Sources */,
 				23F76DAC264520C00050C62D /* Cheat+CoreDataClass.swift in Sources */,
 				23FA54B42640A9C1007AA460 /* MarketCarousel.swift in Sources */,
+				2300A7C8264592B200DC554A /* ExpandedMarketRowView.swift in Sources */,
 				322BA0BB2629BC0C0050ED4B /* AppDelegate.swift in Sources */,
 				238A97F52643FCB900D65927 /* CheatManager.xcdatamodeld in Sources */,
 				8186BB732631C2A900BB3A00 /* NetworkModels.swift in Sources */,

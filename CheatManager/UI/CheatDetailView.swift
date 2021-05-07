@@ -19,58 +19,88 @@ extension View {
 struct CheatDetailView: View {
     let storeCheat: StoreCheat
     let packageManager = PackageManager()
+    @State var showActionSheet: Bool = false
+
     var body: some View {
         VStack(alignment: .leading) {
-            ZStack(alignment: .bottomLeading) {
-                // Banner Image
-                ZStack {
-                    // Gamee Banner
-                    Image(storeCheat.game.banner)
-                        .resizable()
-                        .scaledToFill()
-                    
-                    Rectangle()
-                        .foregroundColor(.clear)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.systemBackground), Color(UIColor.systemBackground).opacity(0.0)]), startPoint: .bottom, endPoint: .top))
-                        .frame(maxHeight: .infinity)
-                }.frame(minWidth: 0, maxWidth: .infinity).frame(height: 240)
-
-                // Game Icon, Name, Author
-                HStack {
-                    // Game Icon
-                    Image(storeCheat.game.icon)
-                        .resizable()
-                        .cornerRadius(10)
-                        .scaledToFit()
-                        .frame(height: 70)
-                        .padding(.leading).padding(.top).padding(.bottom).padding(.trailing, 10)
-                    
-                    VStack(alignment: .leading) {
-                        // Cheat Author
-                        Text(storeCheat.author)
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.primary).opacity(0.7)
+            ScrollView(.vertical, showsIndicators: false) {
+                ZStack(alignment: .bottomLeading) {
+                    // Banner Image
+                    ZStack {
+                        // Gamee Banner
+                        Image(storeCheat.game.banner)
+                            .resizable()
+                            .scaledToFill()
                         
-                        // Game Name
-                        Text(storeCheat.game.name)
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .lineLimit(1)
-                    }
-                    
-                    Spacer()
-                    if UIDevice.current.userInterfaceIdiom == .pad {
-                        Button(action: {
-                            print("GET Button pressed.")
-                        }) {
-                             Text("GET")
-                        }.buttonStyle(CellButtonStyle()).padding()
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.systemBackground), Color(UIColor.systemBackground).opacity(0.0)]), startPoint: .bottom, endPoint: .top))
+                            .frame(maxHeight: .infinity)
+                        
+                        VStack {
+                            HStack {
+                                Spacer()
+                                Button(action: {
+                                    self.showActionSheet = true
+                                }){
+                                    Image(systemName: "ellipsis.circle.fill")
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 30, height: 30)
+                                        .padding(.trailing, 30)
+                                        .padding(.top, 25)
+                                        .foregroundColor(Color.gray).opacity(0.7)
+                                }.actionSheet(isPresented: self.$showActionSheet) {
+                                    ActionSheet(title: Text("Choose an option"), buttons: [
+                                        .default(Text("Rate")) {
+                                            // Open the RateView
+                                        },
+                                        .default(Text("Report")) {
+                                            // Open the ReportView
+                                        },
+                                        .cancel()
+                                    ])
+                                }
+                            }
+                            Spacer()
+                        }
+                    }.frame(minWidth: 0, maxWidth: .infinity).frame(height: 240)
+
+                    // Game Icon, Name, Author
+                    HStack {
+                        // Game Icon
+                        Image(storeCheat.game.icon)
+                            .resizable()
+                            .cornerRadius(10)
+                            .scaledToFit()
+                            .frame(height: 70)
+                            .padding(.leading).padding(.top).padding(.bottom).padding(.trailing, 10)
+                        
+                        VStack(alignment: .leading) {
+                            // Cheat Author
+                            Text(storeCheat.author)
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color.primary).opacity(0.7)
+                            
+                            // Game Name
+                            Text(storeCheat.game.name)
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .lineLimit(1)
+                        }
+                        
+                        Spacer()
+                        if UIDevice.current.userInterfaceIdiom == .pad {
+                            Button(action: {
+                                print("GET Button pressed.")
+                            }) {
+                                 Text("GET")
+                            }.buttonStyle(CellButtonStyle()).padding()
+                        }
                     }
                 }
-            }
-            
-            ScrollView(.vertical, showsIndicators: false) {
+                
                 Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
                     .font(.body)
                     .padding()
