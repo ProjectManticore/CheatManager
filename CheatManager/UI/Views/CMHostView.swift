@@ -24,19 +24,18 @@ struct CMHostView<Content : View> : View {
             ScrollView(.vertical, showsIndicators: false) {
                 content
             }
-            .navigationTitle(self.title)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if (showsAccountImage) {
-                        Image(systemName: "person.crop.circle")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .cornerRadius(20)
-                            .padding(.top, -8)
-                            .gesture(TapGesture(count: 1).onEnded { _ in self.showAccountOverlay.toggle() })
-                    }
+            .navigationBarTitle(self.title)
+            .navigationBarItems(trailing: HStack {
+                Button(action: {
+                    self.showAccountOverlay.toggle()
+                }) {
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .cornerRadius(20)
+                        .padding(.top, -8)
                 }
-            }
+            })
         }.navigationViewStyle(StackNavigationViewStyle())
         .sheet(isPresented: self.$showAccountOverlay) {
             AccountDetailView()

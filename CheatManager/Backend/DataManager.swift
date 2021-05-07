@@ -29,13 +29,14 @@ class DataManager {
     func receiveFeaturedCheats(managedObjectContext: NSManagedObjectContext, completion: @escaping ([StoreCheat]) -> ()) {
         var ret_arr: [StoreCheat] = []
         if self.isNetworkConnected == true {
-            // Fetch data from the API using the CMAPI
             CMAPI().getFeaturedCheats(completion: { (featuredCheats) in
-                print("Sync return status: \(DataProvider(persistentContainer: PersistenceController.shared.container, api: CMAPI()).syncFeaturedCheats(featuredCheats: featuredCheats.data, taskContext: managedObjectContext)) (length: \(featuredCheats.data.count)")
-                completion(featuredCheats.data)
+                if DataProvider(persistentContainer: PersistenceController.shared.container, api: CMAPI()).syncFeaturedCheats(featuredCheats: featuredCheats.data, taskContext: managedObjectContext){
+                    completion(featuredCheats.data)
+                } else {
+                    print("[Featured] Sync. failed")
+                }
             })
         } else if self.isNetworkConnected == false {
-            // Fetch the data from local CoreData Storage
             do {
                 let res = try managedObjectContext.fetch(Featured.fetchRequest()) as! [Featured]
                 for cheat in res {
