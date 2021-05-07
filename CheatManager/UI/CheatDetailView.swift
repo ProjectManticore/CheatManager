@@ -20,7 +20,9 @@ struct CheatDetailView: View {
     let storeCheat: StoreCheat
     let packageManager = PackageManager()
     @State var showActionSheet: Bool = false
-
+    @State var showRateAlert: Bool = false
+    @Binding var isSelfPresented: Bool
+    
     var body: some View {
         VStack(alignment: .leading) {
             ScrollView(.vertical, showsIndicators: false) {
@@ -53,13 +55,27 @@ struct CheatDetailView: View {
                                 }.actionSheet(isPresented: self.$showActionSheet) {
                                     ActionSheet(title: Text("Choose an option"), buttons: [
                                         .default(Text("Rate")) {
-                                            // Open the RateView
+                                            self.showRateAlert = true
                                         },
                                         .default(Text("Report")) {
                                             // Open the ReportView
                                         },
+                                        .default(Text("Share")) {
+                                            // Share the link to the cheat
+                                            UIPasteboard.general.string = "Current Cheat URL"
+                                        },
                                         .cancel()
                                     ])
+                                }.alert(isPresented: self.$showRateAlert) { () -> Alert in
+                                    let primaryButton = Alert.Button.default(Text("Upvote")) {
+                                        print("Upvote pressed")
+                                    }
+                                    
+                                    let secondaryButton = Alert.Button.cancel(Text("Downvote")) {
+                                        print("Downvote pressed")
+                                    }
+                                    
+                                    return Alert(title: Text("Please rate this Cheat"), primaryButton: primaryButton, secondaryButton: secondaryButton)
                                 }
                             }
                             Spacer()
@@ -78,10 +94,16 @@ struct CheatDetailView: View {
                         
                         VStack(alignment: .leading) {
                             // Cheat Author
-                            Text(storeCheat.author)
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color.primary).opacity(0.7)
+                            Button(action: {
+                                // Show the authors profile
+                                print("Authors name tapped in CheatDetailView (Author: \(storeCheat.author)")
+                                self.isSelfPresented = false
+                            }) {
+                                Text(storeCheat.author)
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color.primary).opacity(0.7)
+                            }.disabled(false)
                             
                             // Game Name
                             Text(storeCheat.game.name)

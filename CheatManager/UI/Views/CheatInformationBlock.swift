@@ -46,10 +46,10 @@ struct CheatInformationBlock: View { //Resuable information block ~ Styled like 
                 Divider()
                 
                 HStack {
-                    Text("Author")
+                    Text("Downvotes")
                         .foregroundColor(Color.secondary)
                     Spacer()
-                    Text("\(cheat.author)")
+                    Text("\(cheat.downvotes)")
                 }.padding(.horizontal)
                 
                 Divider()
@@ -60,41 +60,7 @@ struct CheatInformationBlock: View { //Resuable information block ~ Styled like 
                     Spacer()
                     Text(self.versionString)
                 }.padding(.horizontal)
-                
-                Divider()
-                
-                // Upvote/Downvote buttons
-                // Moved outside of list, still don't work
-                HStack {
-                    Spacer()
-                    VStack {
-                        Image(systemName: "hand.thumbsup.fill").frame(height: 10)
-                            .foregroundColor(self.upvoted == true ? .blue : .primary)
-                            .onTapGesture {
-                                self.downvoted = false
-                                self.upvoted = true
-                                print("UPVOTING")
-                            }
-                    }
-                    
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                    
-                    VStack {
-                        Image(systemName: "hand.thumbsdown.fill").frame(height: 10)
-                            .foregroundColor(self.downvoted == true ? .blue : .primary)
-                            .onTapGesture {
-                                self.downvoted = true
-                                self.upvoted = false
-                                print("DOWNVOTING")
-                            }
-                    }
-                    Spacer()
-                }.padding(.top, 8)
-                
-                
-            }.disabled(true)
+            }.disabled(false)
         }
     }
 }

@@ -43,7 +43,7 @@ struct ExpandedMarketRowView: View {
                 }) {
                      Text("GET")
                 }
-                .sheet(isPresented: self.$showDetails) { CheatDetailView(storeCheat: storeCheat) }
+                .sheet(isPresented: self.$showDetails) { CheatDetailView(storeCheat: storeCheat, isSelfPresented: self.$showDetails) }
                 .buttonStyle(CellButtonStyle(sizeCategory: _sizeCategory))
             }.frame(width: 340, height: 70)
         }

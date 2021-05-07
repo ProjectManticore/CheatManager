@@ -47,7 +47,7 @@ struct FeaturedCardView: View {
         .sheet(isPresented: self.$showDetails, onDismiss: {
             self.showDetails = false
         }) {
-            CheatDetailView(storeCheat: storeCheat)
+            CheatDetailView(storeCheat: storeCheat, isSelfPresented: self.$showDetails)
         }
     }
 }
