@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:] ) -> Bool {
+        // Determine who sent the URL.
+        let sendingAppID = options[.sourceApplication]
+        print("[CheatLink] source application = \(sendingAppID ?? "Unknown")")
+        print(url)
+        return true
+    }
+    
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.

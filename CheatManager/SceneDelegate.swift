@@ -15,40 +15,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        let persistenceController = PersistenceController.shared
-        // Create the SwiftUI view that provides the window contents.
-//        #if DEBUG
-//        print("[DEBUG] Creating local development entries in CoreData...")
-//        for _ in 0..<1 {
-//            let featuredItem = Featured(context: persistenceController.container.viewContext)
-//            featuredItem.author = "rpwnage"
-//            featuredItem.createdAt = "2014-12-11T14:12:00.000Z"
-//            featuredItem.downvotes = 5
-//            featuredItem.upvotes = 5
-//            featuredItem.game_id = "609504d299317c2fc31a9991"
-//            featuredItem.id = "6094f566a126956df2710cbb"
-//            featuredItem.installations = 100
-//            featuredItem.name = "Subway Surfers"
-//            featuredItem.version = 1.0
-//            
-//            featuredItem.game_id = "609509d199317c77751a9992"
-//            featuredItem.game_category = "Arcade"
-//            featuredItem.game_name = "Subway Surfers"
-//            featuredItem.game_bundleid = "com.subwaysurfers.riot"
-//            
-//            do {
-//                try persistenceController.container.viewContext.save()
-//            } catch {
-//                print(error)
-//            }
-//        }
-//        #endif
-        let contentView = ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+        if let urlContext = connectionOptions.urlContexts.first {
+            let sendingAppID = urlContext.options.sourceApplication
+            let url = urlContext.url
+            print("source application = \(sendingAppID ?? "Unknown")")
+            print("url = \(url)")
+        }
 
-        // Use a UIHostingController as window root view controller.
+        
+        let persistenceController = PersistenceController.shared
+        let contentView = ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView)
