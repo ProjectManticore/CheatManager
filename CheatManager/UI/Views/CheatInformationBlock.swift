@@ -16,6 +16,18 @@ struct CheatInformationBlock: View {
 
     var body: some View {
         return VStack(alignment: .leading) {
+            Text("Description")
+                .font(.title)
+                .fontWeight(.semibold)
+                .multilineTextAlignment(.leading)
+                .padding(.vertical, 5)
+            
+            Text(cheat.description)
+                .font(.body)
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading)
+            
             Text("Information")
                 .font(.title)
                 .fontWeight(.semibold)

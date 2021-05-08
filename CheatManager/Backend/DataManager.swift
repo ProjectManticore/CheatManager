@@ -40,7 +40,7 @@ class DataManager {
             do {
                 let res = try managedObjectContext.fetch(Featured.fetchRequest()) as! [Featured]
                 for cheat in res {
-                    ret_arr.append(StoreCheat(version: cheat.version, upvotes: cheat.upvotes, downvotes: cheat.downvotes, installations: cheat.installations, createdAt: cheat.createdAt, id: cheat.id, name: cheat.name, author: cheat.author, game: StoreGame(id: cheat.game_id, version: cheat.game_version, name: cheat.game_name, bundleID: cheat.game_bundleid)))
+                    ret_arr.append(StoreCheat(version: cheat.version, upvotes: cheat.upvotes, downvotes: cheat.downvotes, installations: cheat.installations, createdAt: cheat.createdAt, id: cheat.id, name: cheat.name, author: cheat.author, description: cheat.description, game: StoreGame(id: cheat.game_id, version: cheat.game_version, name: cheat.game_name, bundleID: cheat.game_bundleid)))
                 }
                 completion(ret_arr)
             } catch {
@@ -63,7 +63,7 @@ class DataManager {
             do {
                 let res = try managedObjectContext.fetch(Featured.fetchRequest()) as! [Featured]
                 for cheat in res {
-                    ret_arr.append(StoreCheat(version: cheat.version, upvotes: cheat.upvotes, downvotes: cheat.downvotes, installations: cheat.installations, createdAt: cheat.createdAt, id: cheat.id, name: cheat.name, author: cheat.author, game: StoreGame(id: cheat.game_id, version: cheat.game_version, name: cheat.game_name, bundleID: cheat.game_bundleid)))
+                    ret_arr.append(StoreCheat(version: cheat.version, upvotes: cheat.upvotes, downvotes: cheat.downvotes, installations: cheat.installations, createdAt: cheat.createdAt, id: cheat.id, name: cheat.name, author: cheat.author, description: cheat.description, game: StoreGame(id: cheat.game_id, version: cheat.game_version, name: cheat.game_name, bundleID: cheat.game_bundleid)))
                 }
                 completion(ret_arr)
             } catch {

@@ -16,6 +16,7 @@ struct StoreCheat: Codable, Identifiable {
     let version: Double
     let upvotes, downvotes, installations: Int
     let createdAt, id, name, author: String
+    var description: String = ""
     var game: StoreGame
 
     enum CodingKeys: String, CodingKey {
@@ -23,6 +24,7 @@ struct StoreCheat: Codable, Identifiable {
         case createdAt = "created_at"
         case id = "_id"
         case name, author
+        case description = "description"
         case game
     }
 }
