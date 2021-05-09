@@ -17,8 +17,22 @@ struct SearchView: View {
         CMHostView("Search") {
             CMTextField("Search", withSystemImage: "magnifyingglass", for: self.$searchInput)
                 .padding(.bottom)
-            ForEach(self.respCheats){ cheat in
-                MarketRowView(storeCheat: cheat)
+                .padding(.horizontal)
+            if self.respCheats.count > 0 {
+                ForEach(self.respCheats){ cheat in
+                    MarketRowView(storeCheat: cheat)
+                }
+            }else {
+                Button(action: {
+                    print("TODO")
+                }) {
+                    VStack(alignment: .leading) {
+                        Divider()
+                        Text("Cheats for installed Games")
+                            .padding(.horizontal)
+                        Divider()
+                    }.padding(.horizontal)
+                }
             }
         }.onTapGesture {
             UIApplication.shared.endEditing()
