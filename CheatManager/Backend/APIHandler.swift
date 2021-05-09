@@ -108,7 +108,7 @@ class CMAPI {
         .resume()
     }
     
-    func searchByAuthor(Author: String, completion: @escaping (Any) -> ()) {
+    func searchByAuthor(Author: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
         guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByAuthor + Author)) else { return }
         URLSession.shared.dataTask(with: url){ (data, resp, err) in
             if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {

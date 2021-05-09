@@ -9,14 +9,25 @@ import SwiftUI
 import UIKit
 
 struct SearchView: View {
-    
+    let cmAPI = CMAPI()
     @State var searchInput: String = ""
+    @State var respCheats: [StoreCheat] = []
     
     var body: some View {
         CMHostView("Search") {
             CMTextField("Search", withSystemImage: "magnifyingglass", for: self.$searchInput)
+                .padding(.bottom)
+            ForEach(self.respCheats){ cheat in
+                MarketRowView(storeCheat: cheat)
+            }
         }.onTapGesture {
             UIApplication.shared.endEditing()
+        }.onChange(of: searchInput) { string in
+            if string.count >= 3 {
+                cmAPI.searchByAuthor(Author: self.searchInput) { resp in
+                    self.respCheats = resp.data
+                }
+            }
         }
     }
 }

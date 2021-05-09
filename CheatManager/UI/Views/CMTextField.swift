@@ -44,6 +44,7 @@ struct CMTextField: View {
                     }
                     TextField(self.placeholder, text: self.$value)
                         .textFieldStyle(DefaultTextFieldStyle())
+                        .disableAutocorrection(true)
                 }.padding(.horizontal, 6).padding(.vertical, 6)
             }
             if self.rules != nil {
