@@ -38,9 +38,15 @@ struct SearchView: View {
             UIApplication.shared.endEditing()
         }.onChange(of: searchInput) { string in
             if string.count >= 3 {
-                cmAPI.searchByAuthor(Author: self.searchInput) { resp in
-                    self.respCheats = resp.data
+                cmAPI.searchByName(Name: self.searchInput) { resp in
+                    if resp.data.count > 0 {
+                        self.respCheats = resp.data
+                    } else {
+                        self.respCheats = []
+                    }
                 }
+            } else {
+                self.respCheats = []
             }
         }
     }

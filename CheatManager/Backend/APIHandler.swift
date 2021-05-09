@@ -18,6 +18,7 @@ class CMAPIEndpoints {
     let searchByBundleID:   String = "/search/bundle/"      // params: bundle_id
     let searchByCategory:   String = "/search/category/"    // params: category
     let searchByAuthor:     String = "/search/author/"      // params: author
+    let searchByName:     String = "/search/name/"        // params: name
 }
 
 class CMAPI {
@@ -110,6 +111,21 @@ class CMAPI {
     
     func searchByAuthor(Author: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
         guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByAuthor + Author)) else { return }
+        URLSession.shared.dataTask(with: url){ (data, resp, err) in
+            if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
+                // Server is down
+            }
+            
+            let searchResultCheats = try! JSONDecoder().decode(FeaturedCheatsResponse.self, from: data!)
+            DispatchQueue.main.async {
+                completion(searchResultCheats)
+            }
+        }
+        .resume()
+    }
+    
+    func searchByName(Name: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
+        guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByName + Name)) else { return }
         URLSession.shared.dataTask(with: url){ (data, resp, err) in
             if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
                 // Server is down
