@@ -14,6 +14,7 @@
 		238A97F9264403A200D65927 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97F8264403A200D65927 /* DataManager.swift */; };
 		238A97FE26440D6800D65927 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97FD26440D6800D65927 /* CoreDataStack.swift */; };
 		238A980026440DBC00D65927 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A97FF26440DBC00D65927 /* DataProvider.swift */; };
+		238BAE402648320800D6E86B /* GoogleSigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BAE3F2648320800D6E86B /* GoogleSigninView.swift */; };
 		23906014264823E7006943BA /* InstalledApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23906013264823E7006943BA /* InstalledApplicationsView.swift */; };
 		23F76DAC264520C00050C62D /* Cheat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F76DA8264520100050C62D /* Cheat+CoreDataClass.swift */; };
 		23F76DAD264520C20050C62D /* Cheat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F76DA9264520100050C62D /* Cheat+CoreDataProperties.swift */; };
@@ -89,6 +90,7 @@
 		238A97F8264403A200D65927 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		238A97FD26440D6800D65927 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		238A97FF26440DBC00D65927 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		238BAE3F2648320800D6E86B /* GoogleSigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninView.swift; sourceTree = "<group>"; };
 		23906013264823E7006943BA /* InstalledApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledApplicationsView.swift; sourceTree = "<group>"; };
 		23F76DA8264520100050C62D /* Cheat+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cheat+CoreDataClass.swift"; sourceTree = "<group>"; };
 		23F76DA9264520100050C62D /* Cheat+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cheat+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -239,7 +241,6 @@
 				4EDC44DED6F8502F7DCB70D1 /* Pods-CheatManager.debug.xcconfig */,
 				6E10A6AF199547EE2F5A6D47 /* Pods-CheatManager.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -263,6 +264,7 @@
 				26DC751B2641F2B900F5B904 /* CMHostView.swift */,
 				26DC751F2641F86500F5B904 /* SettingSwitch.swift */,
 				26448BCB26473DA400A0C4B9 /* CMTextField.swift */,
+				238BAE3F2648320800D6E86B /* GoogleSigninView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -453,6 +455,7 @@
 				26FFF8762644D3ED0057E101 /* ExpandedMarketView.swift in Sources */,
 				32B40EDF2629BD9000C73004 /* HomeView.swift in Sources */,
 				26C1B1C42644C1FD00E0292D /* SearchView.swift in Sources */,
+				238BAE402648320800D6E86B /* GoogleSigninView.swift in Sources */,
 				23906014264823E7006943BA /* InstalledApplicationsView.swift in Sources */,
 				26DC75202641F86500F5B904 /* SettingSwitch.swift in Sources */,
 				238A97F22643F97E00D65927 /* AccountDetailView.swift in Sources */,
@@ -620,7 +623,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
-				DEVELOPMENT_TEAM = CB8FLNCGFG;
+				DEVELOPMENT_TEAM = 3LJ9H6BD56;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -634,7 +637,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.halliehax.CheatManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manticore.CheatManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CheatManager/SwiftCheatKit-Bridging.h";
@@ -652,7 +655,7 @@
 				CODE_SIGN_ENTITLEMENTS = CheatManager/CheatManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CheatManager/Preview Content\"";
-				DEVELOPMENT_TEAM = CB8FLNCGFG;
+				DEVELOPMENT_TEAM = 3LJ9H6BD56;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CheatManager/Info.plist;
@@ -662,7 +665,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.halliehax.CheatManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manticore.CheatManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CheatManager/SwiftCheatKit-Bridging.h";

@@ -48,6 +48,11 @@ struct VerificationView: View { //Used as a blockade against any parts of CheatM
                     if (self.isSignUp) {
                         CMTextField("Verify Password", for: self.$passwordVerificationInput)
                     }
+                    GoogleSignInButton()
+                                .onTapGesture {
+                                    SocialLogin().attemptLoginGoogle()
+                            }
+                    
                     Button(action: {
                         print("Sign me in/register me please!")
                     }) {

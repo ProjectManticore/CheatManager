@@ -30,14 +30,14 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
+			<string>Editor</string>
 			<key>CFBundleURLIconFile</key>
 			<string></string>
 			<key>CFBundleURLName</key>
-			<string>CheatManager</string>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>cheat</string>
+				<string>com.googleusercontent.apps.105444257320-krqruhqog64t42kg39oj4169k3k4vmdg</string>
 			</array>
 		</dict>
 	</array>
