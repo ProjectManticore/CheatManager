@@ -1,0 +1,9 @@
+Package: com.manticore.cheatmanager
+Name: CheatManager
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: On-device Game Cheat Creation/Sharing platform
+Maintainer: CheatManagerTeam
+Author: CheatManagerTeam
+Section: Utilities
+Depends: CheatKit ${LIBSWIFT}
