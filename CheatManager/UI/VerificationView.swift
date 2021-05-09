@@ -48,10 +48,22 @@ struct VerificationView: View { //Used as a blockade against any parts of CheatM
                     if (self.isSignUp) {
                         CMTextField("Verify Password", for: self.$passwordVerificationInput)
                     }
-                    GoogleSignInButton()
-                                .onTapGesture {
-                                    SocialLogin().attemptLoginGoogle()
+                    
+                    Button(action: {
+                        SocialLogin().attemptLoginGoogle()
+                    }) {
+                        VStack(alignment: .leading) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundColor(.accentColor)
+                                    .frame(height: 45)
+                                    .padding(.vertical)
+                                
+                                Text("Signin with Google")
+                                    .bold()
                             }
+                        }
+                    }
                     
                     Button(action: {
                         print("Sign me in/register me please!")
