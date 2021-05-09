@@ -42,7 +42,7 @@ struct MainTabView: View {
                         Label("Packages", systemImage: "shippingbox.fill")
                     }
                 
-                SettingsView()
+                VerificationView()
                     .tabItem {
                         Label("Settings", systemImage: "gear")
                     }
