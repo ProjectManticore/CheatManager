@@ -7,9 +7,14 @@
 
 import Foundation
 
-struct FeaturedCheatsResponse: Codable {
+struct StandardCheatResponse: Codable {
     let status: String
     let data: [StoreCheat]
+}
+
+struct StandarAuthResponse: Codable {
+    let status: String
+    let data: [String: String]
 }
 
 struct StoreCheat: Codable, Identifiable {

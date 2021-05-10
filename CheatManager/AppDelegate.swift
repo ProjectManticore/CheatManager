@@ -43,6 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let email = user.profile.email
         
         print("New signin \(user.serverAuthCode)")
+        CMAPI().receiveGoogleAuthToken(withToken: user.serverAuthCode) { pepe in
+            print(pepe)
+        }
         // parse with auth/callback?code=
     }
     

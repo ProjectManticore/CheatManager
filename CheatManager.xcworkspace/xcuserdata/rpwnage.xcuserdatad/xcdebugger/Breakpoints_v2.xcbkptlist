@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F4CACD9B-8ADC-473A-BD16-9E0D28FF3E24"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17D37CE8-E8B5-454D-8868-F0CA8207F0B4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CheatManager/Backend/APIHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "receiveGoogleAuthToken(withToken:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81B1ECDF-2E25-41CB-9612-554E896AD48A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CheatManager/Backend/APIHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "receiveGoogleAuthToken(withToken:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "81B1ECDF-2E25-41CB-9612-554E896AD48A - 3e990f554123390c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CheatManager.CMAPI.receiveGoogleAuthToken(withToken: Swift.String, completion: (Any) -&gt; ()) -&gt; ()"
+                  moduleName = "CheatManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rpwnage/Documents/oss_github/CheatManager/CheatManager/Backend/APIHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1344">
+               </Location>
+               <Location
+                  uuid = "81B1ECDF-2E25-41CB-9612-554E896AD48A - d48a50dcfdf109e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CheatManager.CMAPI.receiveGoogleAuthToken(withToken: Swift.String, completion: (Any) -&gt; ()) -&gt; ()"
+                  moduleName = "CheatManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rpwnage/Documents/oss_github/CheatManager/CheatManager/Backend/APIHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "295">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB3DF67B-7B23-43F8-BDF4-B7545514F8A0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CheatManager/Backend/APIHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "receiveGoogleAuthToken(withToken:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

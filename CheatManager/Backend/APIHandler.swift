@@ -18,6 +18,9 @@ class CMAPIEndpoints {
     let searchByBundleID:   String = "/search/bundle/"      // params: bundle_id
     let searchByCategory:   String = "/search/category/"    // params: category
     let searchByAuthor:     String = "/search/author/"      // params: author
+    
+    // Auth
+    let authGoogle:         String = "/auth/callback"      // params: code
 }
 
 class CMAPI {
@@ -51,14 +54,14 @@ class CMAPI {
         .resume()
     }
     
-    func getFeaturedCheats(completion: @escaping (FeaturedCheatsResponse) -> ()) {
+    func getFeaturedCheats(completion: @escaping (StandardCheatResponse) -> ()) {
         guard let url = URL(string: CMAPIEndpoints().Root + CMAPIEndpoints().getFeaturedCheats) else { return }
         URLSession.shared.dataTask(with: url){ (data, resp, err) in
             if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
                 // Server is down
             }
             
-            let featuredCheats = try! JSONDecoder().decode(FeaturedCheatsResponse.self, from: data!)
+            let featuredCheats = try! JSONDecoder().decode(StandardCheatResponse.self, from: data!)
             DispatchQueue.main.async {
                 completion(featuredCheats)
             }
@@ -78,14 +81,14 @@ class CMAPI {
         }
     }
     
-    func searchByBundleID(BundleID: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
+    func searchByBundleID(BundleID: String, completion: @escaping (StandardCheatResponse) -> ()) {
         guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByBundleID + BundleID)) else { return }
         URLSession.shared.dataTask(with: url){ (data, resp, err) in
             if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
                 // Server is down
             }
             
-            let searchResultCheats = try! JSONDecoder().decode(FeaturedCheatsResponse.self, from: data!)
+            let searchResultCheats = try! JSONDecoder().decode(StandardCheatResponse.self, from: data!)
             DispatchQueue.main.async {
                 completion(searchResultCheats)
             }
@@ -93,14 +96,14 @@ class CMAPI {
         .resume()
     }
     
-    func searchByCategory(Category: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
+    func searchByCategory(Category: String, completion: @escaping (StandardCheatResponse) -> ()) {
         guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByCategory + Category)) else { return }
         URLSession.shared.dataTask(with: url){ (data, resp, err) in
             if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
                 // Server is down
             }
             
-            let searchResultCheats = try! JSONDecoder().decode(FeaturedCheatsResponse.self, from: data!)
+            let searchResultCheats = try! JSONDecoder().decode(StandardCheatResponse.self, from: data!)
             DispatchQueue.main.async {
                 completion(searchResultCheats)
             }
@@ -108,14 +111,14 @@ class CMAPI {
         .resume()
     }
     
-    func searchByAuthor(Author: String, completion: @escaping (FeaturedCheatsResponse) -> ()) {
+    func searchByAuthor(Author: String, completion: @escaping (StandardCheatResponse) -> ()) {
         guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().searchByAuthor + Author)) else { return }
         URLSession.shared.dataTask(with: url){ (data, resp, err) in
             if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
                 // Server is down
             }
             
-            let searchResultCheats = try! JSONDecoder().decode(FeaturedCheatsResponse.self, from: data!)
+            let searchResultCheats = try! JSONDecoder().decode(StandardCheatResponse.self, from: data!)
             DispatchQueue.main.async {
                 completion(searchResultCheats)
             }
@@ -123,5 +126,19 @@ class CMAPI {
         .resume()
     }
     
+    func receiveGoogleAuthToken(withToken token: String, completion: @escaping (String) -> ()) {
+        guard let url = URL(string: (CMAPIEndpoints().Root + CMAPIEndpoints().authGoogle + "?code=\(token.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)")) else { return }
+        URLSession.shared.dataTask(with: url){ (data, resp, err) in
+            if ((err?.localizedDescription.contains("Could not connect to the server.")) != nil) {
+                // Server unreachable
+            }
+            
+            let authRequestResponse = try! JSONDecoder().decode(StandarAuthResponse.self, from: data!)
+            DispatchQueue.main.async {
+                completion(authRequestResponse.data["access_token"]!)
+            }
+        }
+        .resume()
+    }
     
 }
