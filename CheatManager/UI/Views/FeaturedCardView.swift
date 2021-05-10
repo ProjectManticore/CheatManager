@@ -32,7 +32,7 @@ struct FeaturedCardView: View {
                             .font(.body)
                             .fontWeight(.semibold)
                             .foregroundColor(Color.secondary)
-                        Text(storeCheat.game.name)
+                        Text(storeCheat.name)
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(Color.white)

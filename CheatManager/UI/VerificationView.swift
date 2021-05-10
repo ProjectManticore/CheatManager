@@ -35,50 +35,64 @@ struct VerificationView: View { //Used as a blockade against any parts of CheatM
                 Text(isSignUp ? "Register now to unlock the full game-winning potential of Cheat Manager, a universal iOS game mod engine" : "Please sign in to use this feature of CheatManager and have full access to the potential!")
                     .font(.body)
                     .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true) //Fixes truncating text when typing
                     .padding(.bottom)
                 Group {
-                    CMTextField("Username", for: self.$usernameInput)
+                    VerificationTextField("Username", for: self.$usernameInput) //Eventually add checks to see if the username is taken!
                     if (self.isSignUp) {
-                        CMTextField("Email", for: self.$emailInput)
+                        VerificationTextField("Email", for: self.$emailInput) //Add verification for is actually an email ~ too tired rn
                     }
-                    CMTextField("Password", for: self.$passwordInput, withRules: !self.isSignUp ? nil : [ //Add rules for when they are signing up, and the password needs certain things
+                    VerificationTextField("Password", for: self.$passwordInput, isPrivate: true, withRules: !self.isSignUp ? nil : [ //Add rules for when they are signing up, and the password needs certain things
                         CMTextFieldRules(title: "Must be longer than 3 characters", isFulfilled: self.passwordInput.count > 3),
                         CMTextFieldRules(title: "Contain a number", isFulfilled: (self.passwordInput.rangeOfCharacter(from: CharacterSet(charactersIn: "1234567890")) != nil))
                     ])
                     if (self.isSignUp) {
-                        CMTextField("Verify Password", for: self.$passwordVerificationInput)
+                        VerificationTextField("Verify Password", for: self.$passwordVerificationInput, isPrivate: true, withRules: [
+                            CMTextFieldRules(title: "Must match your password", isFulfilled: (self.passwordInput == self.passwordVerificationInput && (self.passwordInput != "")))
+                        ])
                     }
-                    
-                    Button(action: {
-                        SocialLogin().attemptLoginGoogle()
+                    Button(action: { //MARK : Start of Google Sign In
+                        print("Handle sign in/up please")
                     }) {
-                        VStack(alignment: .leading) {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(.accentColor)
-                                    .frame(height: 45)
-                                    .padding(.vertical)
-                                
-                                Text("Signin with Google")
-                                    .bold()
-                            }
+                        ZStack(alignment: .center) {
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.accentColor)
+                                .frame(height: 45)
+                                .padding(.vertical)
+                            Text(self.isSignUp ? "Sign Up" : "Signin")
+                                .foregroundColor(.white)
+                                .bold()
                         }
                     }
                     
                     Button(action: {
-                        print("Sign me in/register me please!")
+                        self.isSignUp.toggle()
                     }) {
-                        Text(self.isSignUp ? "Sign Up" : "Sign In")
+                        Text(isSignUp ? "Login instead" : "Sign up instead")
                     }
                 }.padding(.bottom, 8)
                 Spacer()
-                Button(action: {
-                    self.isSignUp.toggle()
+                Button(action: { //MARK : Start of Google Sign In
+                    SocialLogin().attemptLoginGoogle()
                 }) {
-                    Text(isSignUp ? "Login instead" : "Sign up instead")
-                }.padding()
+                    ZStack(alignment: .center) {
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.accentColor)
+                            .frame(height: 45)
+                            .padding(.vertical)
+                        HStack {
+                            Image("googleIcon")
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                                .shadow(color: Color.white, radius: 10.0, x: 0, y: 0)
+                            Text(self.isSignUp ? "Sign Up with Google" : "Signin with Google")
+                                .foregroundColor(.white)
+                                .bold()
+                        }
+                    }
+                }
             }.padding(.horizontal)
-        }
+        }.animation(Animation.default.speed(1))
     }
 }
 
