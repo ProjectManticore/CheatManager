@@ -17,20 +17,23 @@ struct VerificationTextField: View {
     @Environment(\.colorScheme) var colorScheme //Keep track of what colors the textfield should be(configured to iOS)
     
     var showableRules: [CMTextFieldRules] {
-        print("Returning showable rules!")
-        if rules != nil {
-            if self.isPrivate != nil && self.isPrivate! {
-                return self.rules!.filter({ thisRule in
-                    return !thisRule.isFulfilled
-                })
-            } else {
-                if self.isEditing {
-                    return self.rules!
-                } else {
+        if value != "" {
+            if rules != nil {
+                if self.isPrivate != nil && self.isPrivate! {
                     return self.rules!.filter({ thisRule in
                         return !thisRule.isFulfilled
                     })
+                } else {
+                    if self.isEditing {
+                        return self.rules!
+                    } else {
+                        return self.rules!.filter({ thisRule in
+                            return !thisRule.isFulfilled
+                        })
+                    }
                 }
+            } else {
+                return []
             }
         } else {
             return []
