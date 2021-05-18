@@ -17,7 +17,11 @@ struct StandarAuthResponse: Codable {
     let data: [String: String]
 }
 
-struct StoreCheat: Codable, Identifiable {
+struct StoreCheat: Codable, Identifiable, Equatable {
+    static func == (lhs: StoreCheat, rhs: StoreCheat) -> Bool {
+        return ((lhs.author == rhs.author) && (lhs.version == rhs.version) && (lhs.downvotes == rhs.downvotes) && (lhs.upvotes == rhs.upvotes) && (lhs.installations == rhs.installations) && (lhs.createdAt == rhs.createdAt) && (lhs.id == rhs.id) && (lhs.name == rhs.name) && (lhs.description == rhs.description))
+    }
+    
     let version: Double
     let upvotes, downvotes, installations: Int
     let createdAt, id, name, author: String

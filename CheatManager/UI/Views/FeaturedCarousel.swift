@@ -21,9 +21,8 @@ struct FeaturedCarousel: View {
             ScrollView (.horizontal, showsIndicators: false) {
                 HStack(alignment: .center, spacing: 12) {
                     ForEach(cheats) { cheat in
-                        VStack {
-                            FeaturedCardView(image: self.$image, storeCheat: cheat)
-                        }
+                        FeaturedCardView(image: self.$image, storeCheat: cheat)
+                            .padding(.vertical)
                     }
                 }.padding(.leading).padding(.bottom)
             }
