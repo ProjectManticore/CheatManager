@@ -37,16 +37,16 @@ struct VerificationView: View { //Used as a blockade against any parts of CheatM
                     .multilineTextAlignment(.center)
                     .padding(.bottom)
                 Group {
-                    CMTextField("Username", for: self.$usernameInput)
+                    CMTextField("Username", for: self.$usernameInput, isSecureField: false)
                     if (self.isSignUp) {
-                        CMTextField("Email", for: self.$emailInput)
+                        CMTextField("Email", for: self.$emailInput, isSecureField: false)
                     }
                     CMTextField("Password", for: self.$passwordInput, withRules: !self.isSignUp ? nil : [ //Add rules for when they are signing up, and the password needs certain things
                         CMTextFieldRules(title: "Must be longer than 3 characters", isFulfilled: self.passwordInput.count > 3),
                         CMTextFieldRules(title: "Contain a number", isFulfilled: (self.passwordInput.rangeOfCharacter(from: CharacterSet(charactersIn: "1234567890")) != nil))
-                    ])
+                    ], isSecureField: true)
                     if (self.isSignUp) {
-                        CMTextField("Verify Password", for: self.$passwordVerificationInput)
+                        CMTextField("Verify Password", for: self.$passwordVerificationInput, isSecureField: true)
                     }
                     Button(action: {
                         print("Sign me in/register me please!")
