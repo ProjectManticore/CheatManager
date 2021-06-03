@@ -15,7 +15,7 @@ struct SearchView: View {
     
     var body: some View {
         CMHostView("Search") {
-            CMTextField("Search", withSystemImage: "magnifyingglass", for: self.$searchInput)
+            CMTextField("Search", withSystemImage: "magnifyingglass", for: self.$searchInput, isSecureField: false)
                 .padding(.bottom)
                 .padding(.horizontal)
             if self.respCheats.count > 0 {
