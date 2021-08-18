@@ -9,4 +9,4 @@ Feel free to create pull requests for any kind of improvements, bug fixes or enh
 
 ## Thanks to...
 
-Made with ❤️ by [Rpwnage](https://twitter.com/rpwnage), [Althio](https://twitter.com/a1thio), [Monotrix](https://github.com/monotrix), [Vislate](https://github.com/Vislate)
+Made with ❤️ by [Rpwnage](https://twitter.com/rpwnage), [Monotrix](https://github.com/monotrix), [Vislate](https://github.com/Vislate)
