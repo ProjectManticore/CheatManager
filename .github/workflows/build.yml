@@ -10,7 +10,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - name: Setup Theos
-        uses: actions/checkout@master
         run: |
           /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/lint/f706db1e0fd0075e80bb7121c05d5f02/raw/e273471213214b6b794141df7817786ec063fced/install_theos.sh)"
       - uses: actions/checkout@v2
