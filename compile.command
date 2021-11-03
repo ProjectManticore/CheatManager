@@ -2,9 +2,6 @@
 
 set -ex
 
-# add /opt/bin to search path
-export PATH=/opt/homebrew/bin/:$PATH
-
 # cd script dir
 cd "$(dirname "$0")" || exit
 cd ..
