@@ -9,14 +9,14 @@ jobs:
    steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Install Theos to GITHUB_ROOT
-        uses: powenn/theos-action@v1.1
+      - name: Install Theos to GITHUB_HOME
+        uses: powenn/theos-action@v1.2
       - uses: actions/checkout@v2
       - name: submodules-init
         uses: snickerbockers/submodules-init@v4
       - name: Build
         run: |
-          export THEOS=$GITHUB_ROOT/theos
+          export THEOS=$GITHUB_HOME/theos
           cd $GITHUB_WORKSPACE
           chmod +x compile.command
           bash compile.command
