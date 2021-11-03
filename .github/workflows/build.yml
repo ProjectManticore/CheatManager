@@ -20,17 +20,20 @@ jobs:
           submodules: recursive
       - name: Download SDKs
         run: |
+          mkdir theosfile
+          cd theosfile
           curl -LO https://github.com/SamHep0803/iOS-13-Patched-SDK/archive/master.zip
           TMP=$(mktemp -d)
           unzip master.zip -d $TMP
           mv $TMP/iOS-13-Patched-SDK-master/*.sdk theos/sdks
           rm -r master.zip $TMP # TODO: it should be
+          cd $GITHUB_WORKSPACE
       - uses: actions/checkout@v2
       - name: submodules-init
         uses: snickerbockers/submodules-init@v4
       - name: Build
         run: |
-          export THEOS=$GITHUB_WORKSPACE/theos
+          export THEOS=$GITHUB_WORKSPACE/theosfile/theos
           chmod +x compile.command
           bash compile.command
           
