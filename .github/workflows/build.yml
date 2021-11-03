@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - name: Install Theos to GITHUB_ROOT
-        uses: powenn/theos-action@v1
+        uses: powenn/theos-action@v1.1
       - uses: actions/checkout@v2
       - name: submodules-init
         uses: snickerbockers/submodules-init@v4
