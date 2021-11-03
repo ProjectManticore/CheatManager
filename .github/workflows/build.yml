@@ -9,15 +9,13 @@ jobs:
    steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Setup Theos
-        run: |
-          /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/lint/f706db1e0fd0075e80bb7121c05d5f02/raw/e273471213214b6b794141df7817786ec063fced/install_theos.sh)"
+      - name: Install Theos
+        uses: Randomblock1/theos-action@v1
       - uses: actions/checkout@v2
       - name: submodules-init
         uses: snickerbockers/submodules-init@v4
       - name: Build
         run: |
-          export THEOS=~/theos
           chmod +x compile.command
           bash compile.command
           
