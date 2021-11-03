@@ -30,7 +30,7 @@ jobs:
         uses: snickerbockers/submodules-init@v4
       - name: Build
         run: |
-          export PATH=/theos/:$PATH
+          export PATH=/theos :$PATH
           chmod +x compile.command
           bash compile.command
           
