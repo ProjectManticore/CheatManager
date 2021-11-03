@@ -16,7 +16,7 @@ jobs:
         uses: snickerbockers/submodules-init@v4
       - name: Build
         run: |
-          export THEOS=$GITHUB_WORKSPACE/theos
+          export THEOS=$GITHUB_ROOT/theos
           chmod +x compile.command
           bash compile.command
           
