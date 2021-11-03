@@ -17,6 +17,7 @@ jobs:
         uses: snickerbockers/submodules-init@v4
       - name: Build
         run: |
+          PATH=/theos:/opt/homebrew/bin/
           chmod +x compile.command
           bash compile.command
           
