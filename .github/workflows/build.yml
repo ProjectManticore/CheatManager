@@ -1,0 +1,44 @@
+name: Build Release
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: macos-11
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - uses: actions/checkout@v2
+      - name: submodules-init
+        uses: snickerbockers/submodules-init@v4
+      - name: Build
+        run: |
+          echo -e "\tMaking theos directory"
+          mkdir theos
+          echo -e "\tSetting $THEOS path"
+          export THEOS=$GITHUB_WORKSPACE/theos
+          echo "export THEOS=$GITHUB_WORKSPACE/theos" >> ~/.zprofile
+          echo -e "\tInstalling theos"
+          git clone --quiet --recursive git://github.com/theos/theos.git $THEOS
+          echo -e "\tInstalling ldid"
+          cd $THEOS/bin
+          curl -OLs http://joedj.net/ldid
+          chmod -R 0777 ldid
+          echo -e "\tInstalling sdks"
+          curl -LOs https://github.com/theos/sdks/archive/master.zip
+          TMP=$(mktemp -d)
+          unzip -q master.zip -d $TMP
+          mv $TMP/sdks-master/*.sdk $THEOS/sdks
+          rm -r master.zip $TMP
+          echo -e "\tChanging deb compression type in theos deb.mk file"
+          cd $THEOS/makefiles/package
+          sed -e '6s/.*/_THEOS_PLATFORM_DPKG_DEB_COMPRESSION ?= $(or $(THEOS_PLATFORM_DEB_COMPRESSION_TYPE),gzip)/' -i '' deb.mk
+          echo -e "\t*** execute -> \"export THEOS=~/theos\" again after completion ***"
+          export THEOS=$GITHUB_WORKSPACE/theos
+          cd $GITHUB_WORKSPACE
+          chmod +x compile.command
+          bash compile.command
+      - name: Upload .ipa
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: CheatManager.ipa
+          path: "CheatManager.ipa"
