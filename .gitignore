@@ -2,3 +2,7 @@
 .DS_STORE
 packages/
 /Pods
+xcuserdata
+build
+*.ipa
+Payload
