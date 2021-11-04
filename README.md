@@ -6,6 +6,8 @@ CheatManager is a mobile platform, used for installation/distribution/creation o
 We're looking forward to make CheatManager available for all iOS Devices.
 ## Build
 Build with compile.command requires `theos`,or use github action instead
+
+compile.command will update CheatKit automatically while execute
 ## Contribution
 Feel free to create pull requests for any kind of improvements, bug fixes or enhancements. To update the linked CheatKit Submodule to the latest verison, please run  `git submodule update --recursive --remote`
 
