@@ -12,7 +12,7 @@ cd $GIT_ROOT/CheatManager
 rm -rf CheatKit
 git clone https://github.com/ProjectManticore/CheatKit.git
 # clean last time build
-rm -rf build *.ipa Payload
+rm -rf build *.ipa Payload .theos
 cd CheatKit
 make
 cd ../
